@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WYN Studio — сайты для малого бизнеса за 5 дней</title>
+<meta name="description" content="Лендинги и сайты-визитки для малого бизнеса: быстро, с адаптивом под телефоны и формой заявок. Фиксированная цена, оплата по этапам.">
+<meta property="og:title" content="WYN Studio — сайты для малого бизнеса за 5 дней">
+<meta property="og:description" content="Лендинги и сайты-визитки с фиксированной ценой и оплатой по этапам.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f7f7f4;--ink:#0f1013;--muted:#686b72;--line:#e3e3de;--card:#fff;--acc:#2b59ff;--acc-l:#e8eeff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Onest,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:30;background:rgba(247,247,244,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:68px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:800;font-size:19px;display:flex;align-items:center;gap:10px}
+.logo i{width:26px;height:26px;border-radius:8px;background:var(--ink);display:grid;place-items:center;color:#fff;font-style:normal;font-size:13px}
+.nav nav{display:flex;gap:28px;color:var(--muted);font-weight:500}
+.nav nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:#fff;padding:14px 24px;border-radius:999px;font-weight:600;transition:.2s;border:0;cursor:pointer;font:inherit;font-weight:600}
+.btn:hover{background:var(--acc)}
+.btn.acc{background:var(--acc)}
+.btn.acc:hover{background:var(--ink)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.hero{padding:88px 0 72px}
+.badge{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:500;background:var(--card);border:1px solid var(--line);padding:7px 14px;border-radius:999px;margin-bottom:28px}
+.badge b{width:8px;height:8px;border-radius:50%;background:#1fbf6b;box-shadow:0 0 0 4px #d8f5e5}
+h1{font-size:clamp(40px,6.6vw,84px);line-height:1;letter-spacing:-.035em;font-weight:800;max-width:980px}
+h1 span{color:var(--acc)}
+.hero p{font-size:20px;color:var(--muted);max-width:620px;margin:28px 0 36px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:72px}
+.facts div{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.facts b{font-size:28px;font-weight:800;letter-spacing:-.02em;display:block}
+.facts span{color:var(--muted);font-size:14px}
+section{padding:96px 0}
+.sh{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:40px;flex-wrap:wrap}
+h2{font-size:clamp(30px,4vw,52px);line-height:1.05;letter-spacing:-.03em;font-weight:800}
+.sh p{color:var(--muted);max-width:420px}
+/* works */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.w{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:.25s}
+.w:hover{transform:translateY(-4px);box-shadow:0 24px 48px -24px rgba(15,16,19,.25)}
+.shot{aspect-ratio:4/3;overflow:hidden;position:relative;border-bottom:1px solid var(--line);background:#eee}
+.shot iframe{width:1280px;height:960px;border:0;transform-origin:0 0;pointer-events:none;position:absolute;top:0;left:0}
+.w .in{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.w h3{font-size:20px;letter-spacing:-.01em}
+.w p{color:var(--muted);font-size:15px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips span{font-size:12px;font-weight:600;background:var(--acc-l);color:var(--acc);padding:4px 10px;border-radius:999px}
+.w .go{margin-top:auto;font-weight:600;display:flex;justify-content:space-between;align-items:center;padding-top:8px}
+.w .go::after{content:"→";transition:.2s}
+.w:hover .go::after{transform:translateX(4px)}
+/* pricing */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:32px;display:flex;flex-direction:column}
+.plan.hot{background:var(--ink);color:#fff;border-color:var(--ink)}
+.plan .lbl{font-size:13px;font-weight:600;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.plan.hot .lbl{color:#9ea3ff}
+.plan h3{font-size:24px;margin:8px 0 4px}
+.plan .pr{font-size:40px;font-weight:800;letter-spacing:-.03em;margin:18px 0 4px}
+.plan .tm{color:var(--muted);font-size:15px;margin-bottom:24px}
+.plan.hot .tm{color:#a6a8ad}
+.plan ul{list-style:none;display:grid;gap:10px;margin-bottom:28px}
+.plan li{display:flex;gap:10px;font-size:15px}
+.plan li::before{content:"✓";color:var(--acc);font-weight:800}
+.plan.hot li::before{color:#9ea3ff}
+.plan .btn{margin-top:auto;justify-content:center}
+.plan.hot .btn{background:#fff;color:var(--ink)}
+.plan.hot .btn:hover{background:var(--acc);color:#fff}
+.extra{margin-top:20px;background:var(--card);border:1px solid var(--line);border-radius:22px;padding:24px 32px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.extra p{color:var(--muted)}
+/* process */
+.proc{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:p}
+.proc div{border-top:2px solid var(--ink);padding-top:20px}
+.proc div::before{counter-increment:p;content:"0" counter(p);display:block;font-weight:800;color:var(--acc);margin-bottom:12px}
+.proc h3{font-size:19px;margin-bottom:8px}
+.proc p{color:var(--muted);font-size:15px}
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+details:first-child{border-top:1px solid var(--line)}
+summary{font-weight:600;font-size:18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px}
+summary::after{content:"+";font-size:24px;line-height:1;color:var(--acc);transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);margin-top:10px}
+/* cta */
+.cta{background:var(--acc);color:#fff;border-radius:32px;padding:72px 56px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.cta::after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;border:80px solid rgba(255,255,255,.08);right:-120px;top:-160px}
+.cta p{opacity:.85;font-size:18px;margin-top:16px;max-width:520px}
+.cta .links{display:grid;gap:12px;position:relative;z-index:1}
+.cta .btn{background:#fff;color:var(--ink);justify-content:space-between}
+.cta .btn:hover{background:var(--ink);color:#fff}
+footer{padding:40px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+@media (max-width:960px){
+  .nav nav{display:none}
+  .works,.plans{grid-template-columns:1fr 1fr}
+  .proc,.facts{grid-template-columns:1fr 1fr}
+  .faq,.cta{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  section{padding:72px 0}
+  .hero{padding:56px 0 48px}
+  .hero p{font-size:18px}
+  .works,.plans,.proc{grid-template-columns:1fr}
+  .facts{margin-top:48px}
+  .cta{padding:40px 24px;border-radius:24px}
+  .nav .btn{padding:11px 16px;font-size:14px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><i>W</i>WYN Studio</a>
+    <nav><a href="#works">Работы</a><a href="#prices">Цены</a><a href="#process">Процесс</a><a href="#faq">Вопросы</a></nav>
+    <a href="#contact" class="btn">Обсудить проект</a>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="badge"><b></b>Беру новые проекты — старт в течение 1–2 дней</div>
+    <h1>Сайты, которые <span>приводят заявки</span>, а не просто красиво висят</h1>
+    <p>Делаю лендинги и сайты-визитки для малого бизнеса за 3–7 дней. Фиксированная цена, оплата по этапам, адаптив под телефоны и форма заявок в Telegram — в базе.</p>
+    <div class="row"><a href="#works" class="btn acc">Смотреть работы</a><a href="#prices" class="btn ghost">Узнать цены</a></div>
+    <div class="facts">
+      <div><b>3–7 дней</b><span>от брифа до запуска</span></div>
+      <div><b>50%</b><span>предоплата, остальное после сдачи</span></div>
+      <div><b>95+</b><span>баллов скорости в PageSpeed</span></div>
+      <div><b>14 дней</b><span>бесплатных правок после запуска</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="works" style="padding-top:24px">
+  <div class="wrap">
+    <div class="sh"><h2>Работы</h2><p>Концепт-проекты для типовых ниш малого бизнеса. Нажмите, чтобы открыть живой сайт.</p></div>
+    <div class="works">
+      <a class="w" href="works/remont/" target="_blank">
+        <div class="shot"><iframe src="works/remont/" loading="lazy" tabindex="-1" title="Превью: ремонт квартир"></iframe></div>
+        <div class="in">
+          <div class="chips"><span>Лендинг</span><span>Калькулятор</span><span>Лидогенерация</span></div>
+          <h3>«Прямой угол» — ремонт квартир</h3>
+          <p>Калькулятор стоимости, который считает цену, срок и бригаду. Форма замера, блок гарантий, FAQ.</p>
+          <span class="go">Открыть сайт</span>
+        </div>
+      </a>
+      <a class="w" href="works/coffee/" target="_blank">
+        <div class="shot"><iframe src="works/coffee/" loading="lazy" tabindex="-1" title="Превью: кофейня"></iframe></div>
+        <div class="in">
+          <div class="chips"><span>Сайт-визитка</span><span>Меню</span><span>Магазин</span></div>
+          <h3>«Медь» — кофейня и обжарка</h3>
+          <p>Меню с вкладками, витрина зерна с корзиной, карта и часы работы. Атмосферный тёмный дизайн.</p>
+          <span class="go">Открыть сайт</span>
+        </div>
+      </a>
+      <a class="w" href="works/barber/" target="_blank">
+        <div class="shot"><iframe src="works/barber/" loading="lazy" tabindex="-1" title="Превью: барбершоп"></iframe></div>
+        <div class="in">
+          <div class="chips"><span>Лендинг</span><span>Онлайн-запись</span></div>
+          <h3>«Грань» — барбершоп</h3>
+          <p>Пошаговая онлайн-запись: услуга → мастер → дата и свободные слоты → контакты. Прайс и мастера.</p>
+          <span class="go">Открыть сайт</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="prices">
+  <div class="wrap">
+    <div class="sh"><h2>Цены</h2><p>Цена фиксируется до старта и не меняется. Домен и хостинг помогу подключить.</p></div>
+    <div class="plans">
+      <div class="plan">
+        <div class="lbl">Старт</div><h3>Сайт-визитка</h3>
+        <div class="pr">от 6 000 ₽</div><div class="tm">2–3 дня</div>
+        <ul><li>1 страница, до 5 блоков</li><li>Адаптив под телефоны</li><li>Кнопки звонка и мессенджеров</li><li>Карта и контакты</li></ul>
+        <a href="#contact" class="btn ghost">Заказать</a>
+      </div>
+      <div class="plan hot">
+        <div class="lbl">Популярный</div><h3>Продающий лендинг</h3>
+        <div class="pr">от 12 000 ₽</div><div class="tm">4–6 дней</div>
+        <ul><li>До 10 блоков, структура под продажи</li><li>Тексты помогу написать</li><li>Форма заявок → Telegram или почта</li><li>Калькулятор, квиз или запись</li><li>Яндекс.Метрика и базовое SEO</li></ul>
+        <a href="#contact" class="btn">Заказать</a>
+      </div>
+      <div class="plan">
+        <div class="lbl">Бизнес</div><h3>Многостраничный сайт</h3>
+        <div class="pr">от 25 000 ₽</div><div class="tm">7–14 дней</div>
+        <ul><li>До 7 страниц</li><li>Каталог услуг или товаров</li><li>Блог или раздел новостей</li><li>Всё из тарифа «Лендинг»</li></ul>
+        <a href="#contact" class="btn ghost">Заказать</a>
+      </div>
+    </div>
+    <div class="extra"><div><b>Нужна доработка готового сайта?</b><p>Правки вёрстки, адаптив, ускорение, перенос на новый хостинг — от 1 500 ₽.</p></div><a href="#contact" class="btn ghost">Написать</a></div>
+  </div>
+</section>
+
+<section id="process" style="padding-top:0">
+  <div class="wrap">
+    <div class="sh"><h2>Как работаем</h2><p>Вы всегда знаете, что происходит и сколько осталось.</p></div>
+    <div class="proc">
+      <div><h3>Бриф</h3><p>15 минут в чате: ниша, цель сайта, примеры, которые нравятся.</p></div>
+      <div><h3>Прототип</h3><p>Через 1–2 дня показываю структуру и первый экран. Вносим правки.</p></div>
+      <div><h3>Разработка</h3><p>Верстаю весь сайт, подключаю формы и аналитику. Ссылка на тестовую версию.</p></div>
+      <div><h3>Запуск</h3><p>Подключаю домен, проверяю на всех устройствах. 14 дней правок бесплатно.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="padding-top:0">
+  <div class="wrap faq">
+    <div><h2>Вопросы</h2></div>
+    <div>
+      <details open><summary>У меня нет текстов и фотографий. Это проблема?</summary><p>Нет. Помогу составить тексты по короткому брифу и подберу качественные фото со стоков, если своих нет.</p></details>
+      <details><summary>Смогу ли я сам что-то поменять на сайте?</summary><p>Да. Простые правки (цены, телефон, тексты) покажу, как делать самостоятельно. Или вношу их сам в течение 14 дней бесплатно.</p></details>
+      <details><summary>Где будет размещён сайт и сколько это стоит?</summary><p>Можно бесплатно на надёжном хостинге для статических сайтов или на вашем хостинге. Домен .ru — около 200–900 ₽ в год. Всё оформляется на вас.</p></details>
+      <details><summary>Как происходит оплата?</summary><p>50% перед стартом, 50% после того, как вы приняли готовый сайт. Через безопасную сделку на бирже или напрямую с чеком самозанятого.</p></details>
+      <details><summary>Работаете на конструкторах — Тильде, WordPress?</summary><p>Основной формат — код вручную: быстрее грузится и не требует ежемесячной подписки. Если нужна Тильда или WordPress — тоже сделаю.</p></details>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="padding-top:0">
+  <div class="wrap">
+    <div class="cta">
+      <div>
+        <h2>Расскажите о проекте — оценю за час</h2>
+        <p>Напишите пару слов о бизнесе и что нужно от сайта. Отвечу с ценой, сроком и идеями по структуре.</p>
+      </div>
+      <div class="links">
+        <a class="btn" href="https://t.me/USERNAME" target="_blank">Написать в Telegram <span>→</span></a>
+        <a class="btn" href="mailto:EMAIL@example.com">Написать на почту <span>→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><span>© WYN Studio, 2026</span><span>Сайты для малого бизнеса</span></div>
+</footer>
+
+<script>
+const fit = () => document.querySelectorAll('.shot').forEach(s => s.querySelector('iframe').style.transform = `scale(${s.clientWidth / 1280})`);
+new ResizeObserver(fit).observe(document.body);
+fit();
+</script>
+</body>
+</html>

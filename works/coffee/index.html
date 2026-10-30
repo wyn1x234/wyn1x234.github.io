@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Медь — кофейня и обжарка</title>
+<meta name="description" content="Кофейня с собственной обжаркой. Меню, зерно на вынос, завтраки до 16:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#17110e;--bg2:#211915;--cream:#f2e8dc;--muted:#b3a597;--copper:#c87d4b;--copper-l:#e3a272;--line:#3a2e27}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--cream);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+.serif{font-family:"Cormorant Garamond",Georgia,serif}
+header{position:absolute;top:0;left:0;right:0;z-index:10}
+.nav{display:flex;justify-content:space-between;align-items:center;height:80px}
+.logo{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:700;letter-spacing:.02em;display:flex;align-items:center;gap:10px}
+.logo span{width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 35% 35%,var(--copper-l),var(--copper) 55%,#7a4425)}
+.nav nav{display:flex;gap:32px;font-size:15px;color:var(--muted)}
+.nav nav a:hover{color:var(--cream)}
+.btn{display:inline-block;padding:14px 28px;border-radius:999px;background:var(--copper);color:var(--bg);font-weight:600;transition:.2s;border:0;cursor:pointer;font:inherit;font-weight:600}
+.btn:hover{background:var(--copper-l)}
+.btn.line{background:transparent;color:var(--cream);box-shadow:inset 0 0 0 1px var(--muted)}
+.btn.line:hover{box-shadow:inset 0 0 0 1px var(--cream)}
+.hero{min-height:100vh;display:grid;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
+.hero::before{content:"";position:absolute;width:780px;height:780px;right:-220px;top:50%;transform:translateY(-50%);border-radius:50%;background:radial-gradient(circle,rgba(200,125,75,.28),transparent 65%)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center}
+.kicker{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--copper-l);margin-bottom:20px}
+h1{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(48px,7.4vw,104px);line-height:.95;letter-spacing:-.01em}
+h1 em{color:var(--copper-l);font-weight:500}
+.hero p{font-size:18px;color:var(--muted);max-width:460px;margin:28px 0 36px}
+.hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+.cup{width:100%;max-width:380px;justify-self:center}
+.hours{display:flex;gap:32px;margin-top:56px;color:var(--muted);font-size:14px;flex-wrap:wrap}
+.hours b{display:block;color:var(--cream);font-size:16px;font-weight:600}
+section{padding:110px 0}
+h2{font-family:"Cormorant Garamond",serif;font-weight:600;font-size:clamp(38px,5vw,64px);line-height:1;margin-bottom:20px}
+.sub{color:var(--muted);max-width:520px;font-size:17px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;border-top:1px solid var(--line);padding-top:110px}
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.nums b{font-family:"Cormorant Garamond",serif;font-size:56px;font-weight:600;color:var(--copper-l);display:block;line-height:1}
+.nums span{color:var(--muted);font-size:14px}
+/* menu */
+.menu{background:var(--bg2)}
+.tabs{display:flex;gap:8px;margin:40px 0 32px;flex-wrap:wrap}
+.tabs button{font:inherit;font-size:15px;padding:10px 20px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer;transition:.2s}
+.tabs button.on{background:var(--cream);color:var(--bg);border-color:var(--cream)}
+.list{display:none;grid-template-columns:1fr 1fr;column-gap:64px}
+.list.on{display:grid}
+.item{display:flex;align-items:baseline;gap:12px;padding:18px 0;border-bottom:1px solid var(--line)}
+.item h3{font-family:"Cormorant Garamond",serif;font-size:24px;font-weight:600}
+.item small{display:block;color:var(--muted);font-size:14px;font-family:Inter}
+.item .dots{flex:1;border-bottom:1px dotted var(--line);transform:translateY(-6px)}
+.item .p{font-weight:600;color:var(--copper-l);white-space:nowrap}
+/* beans */
+.beans{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.bean{border:1px solid var(--line);border-radius:24px;padding:32px;display:flex;flex-direction:column;transition:.25s}
+.bean:hover{border-color:var(--copper);transform:translateY(-4px)}
+.bean .bag{height:150px;border-radius:16px;margin-bottom:24px;display:grid;place-items:center;position:relative;overflow:hidden}
+.bean .bag::after{content:"";position:absolute;inset:auto -20% -60% -20%;height:120%;border-radius:50%;background:rgba(0,0,0,.18)}
+.bean .bag span{font-family:"Cormorant Garamond",serif;font-size:42px;font-weight:700;color:var(--bg);position:relative;z-index:1}
+.bean h3{font-family:"Cormorant Garamond",serif;font-size:30px;font-weight:600}
+.bean .origin{color:var(--muted);font-size:14px;margin-bottom:16px}
+.notes{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.notes span{font-size:13px;padding:4px 10px;border-radius:999px;background:rgba(200,125,75,.14);color:var(--copper-l)}
+.scale{display:flex;gap:4px;margin-bottom:24px;align-items:center;font-size:13px;color:var(--muted)}
+.scale i{width:18px;height:6px;border-radius:3px;background:var(--line)}
+.scale i.f{background:var(--copper)}
+.bean .row{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+.bean .row b{font-size:22px}
+.bean .btn{padding:10px 20px}
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:var(--cream);color:var(--bg);padding:14px 24px;border-radius:999px;font-weight:600;transition:.35s;z-index:50}
+.toast.show{transform:translate(-50%,0)}
+/* visit */
+.visit{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:stretch}
+.map{border-radius:28px;background:var(--bg2);position:relative;overflow:hidden;min-height:380px;border:1px solid var(--line)}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.pin{position:absolute;left:54%;top:44%;transform:translate(-50%,-100%);background:var(--copper);color:var(--bg);font-weight:600;font-size:14px;padding:8px 14px;border-radius:999px;white-space:nowrap}
+.pin::after{content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:var(--copper)}
+.info dl{display:grid;grid-template-columns:140px 1fr;gap:18px 20px;margin:32px 0}
+.info dt{color:var(--muted)}
+.info dd{font-weight:500}
+footer{border-top:1px solid var(--line);padding:36px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px}
+@media (max-width:900px){
+  .nav nav{display:none}
+  .hero .wrap,.about,.visit{grid-template-columns:1fr}
+  .cup{max-width:240px;order:-1}
+  .list{grid-template-columns:1fr}
+  .beans{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  section{padding:80px 0}
+  .about{padding-top:80px;gap:40px}
+  .nums b{font-size:42px}
+  .info dl{grid-template-columns:1fr;gap:4px}
+  .info dd{margin-bottom:12px}
+  .hero{min-height:auto}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo"><span></span>Медь</a>
+    <nav><a href="#menu">Меню</a><a href="#beans">Зерно</a><a href="#visit">Как найти</a></nav>
+    <a href="#beans" class="btn line">Купить зерно</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="kicker">Кофейня · обжарка · завтраки</div>
+      <h1>Кофе, который мы <em>обжариваем</em> сами</h1>
+      <p>Каждую среду жарим свежие лоты в собственном ростере прямо в зале. Через 48 часов они уже в вашей чашке.</p>
+      <div class="actions"><a href="#menu" class="btn">Смотреть меню</a><a href="#visit" class="btn line">Как добраться</a></div>
+      <div class="hours"><div><b>Пн–Пт</b>08:00 – 22:00</div><div><b>Сб–Вс</b>09:00 – 23:00</div><div><b>Завтраки</b>до 16:00</div></div>
+    </div>
+    <svg class="cup" viewBox="0 0 300 300" aria-hidden="true">
+      <defs><radialGradient id="cf" cx=".4" cy=".35"><stop offset="0" stop-color="#9a5a33"/><stop offset=".6" stop-color="#5a3018"/><stop offset="1" stop-color="#2a160b"/></radialGradient></defs>
+      <ellipse cx="150" cy="250" rx="130" ry="24" fill="#000" opacity=".35"/>
+      <ellipse cx="150" cy="232" rx="128" ry="34" fill="#2a201b" stroke="#3a2e27" stroke-width="2"/>
+      <path d="M58 120 Q62 228 150 232 Q238 228 242 120 Z" fill="#f2e8dc"/>
+      <path d="M240 140 q46 4 40 40 q-6 30 -48 24" fill="none" stroke="#f2e8dc" stroke-width="14"/>
+      <ellipse cx="150" cy="120" rx="92" ry="26" fill="url(#cf)" stroke="#f2e8dc" stroke-width="6"/>
+      <path d="M128 112 q22 -16 44 0 q-22 22 -44 0z" fill="#e3a272" opacity=".85"/>
+      <g fill="none" stroke="#b3a597" stroke-width="3" stroke-linecap="round" opacity=".5">
+        <path d="M120 80 q-12 -18 0 -36 q12 -18 0 -36"/><path d="M150 76 q-12 -18 0 -36 q12 -18 0 -36"/><path d="M180 80 q-12 -18 0 -36 q12 -18 0 -36"/>
+      </g>
+    </svg>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap about">
+    <div>
+      <div class="kicker">О нас</div>
+      <h2>Маленький ростер<br>и большая любовь к зерну</h2>
+      <p class="sub">Покупаем зелёное зерно напрямую у ферм Эфиопии, Колумбии и Бразилии. Профиль обжарки подбираем под каждый лот — чтобы раскрыть его, а не спрятать.</p>
+    </div>
+    <div class="nums">
+      <div><b>14</b><span>лотов в году</span></div>
+      <div><b>48 ч</b><span>от обжарки до чашки</span></div>
+      <div><b>86+</b><span>баллов SCA у каждого лота</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="wrap">
+    <div class="kicker">Меню</div>
+    <h2>Что сегодня в чашке</h2>
+    <div class="tabs" role="tablist">
+      <button class="on" data-t="coffee">Кофе</button>
+      <button data-t="alt">Альтернатива</button>
+      <button data-t="food">Завтраки</button>
+      <button data-t="sweet">Десерты</button>
+    </div>
+    <div class="list on" id="coffee">
+      <div class="item"><div><h3>Эспрессо</h3><small>бленд «Медь», 30 мл</small></div><span class="dots"></span><span class="p">160 ₽</span></div>
+      <div class="item"><div><h3>Капучино</h3><small>250 / 350 мл</small></div><span class="dots"></span><span class="p">240 / 290 ₽</span></div>
+      <div class="item"><div><h3>Флэт уайт</h3><small>двойной эспрессо, 200 мл</small></div><span class="dots"></span><span class="p">280 ₽</span></div>
+      <div class="item"><div><h3>Раф медовый</h3><small>сливки, гречишный мёд</small></div><span class="dots"></span><span class="p">320 ₽</span></div>
+      <div class="item"><div><h3>Латте на овсяном</h3><small>350 мл</small></div><span class="dots"></span><span class="p">310 ₽</span></div>
+      <div class="item"><div><h3>Кортадо</h3><small>120 мл</small></div><span class="dots"></span><span class="p">220 ₽</span></div>
+    </div>
+    <div class="list" id="alt">
+      <div class="item"><div><h3>Воронка V60</h3><small>лот дня на выбор</small></div><span class="dots"></span><span class="p">290 ₽</span></div>
+      <div class="item"><div><h3>Аэропресс</h3><small>лот дня на выбор</small></div><span class="dots"></span><span class="p">270 ₽</span></div>
+      <div class="item"><div><h3>Колд брю</h3><small>настой 18 часов</small></div><span class="dots"></span><span class="p">260 ₽</span></div>
+      <div class="item"><div><h3>Батч брю</h3><small>фильтр-кофе, 250 мл</small></div><span class="dots"></span><span class="p">190 ₽</span></div>
+    </div>
+    <div class="list" id="food">
+      <div class="item"><div><h3>Сырники</h3><small>сметана, ягодный соус</small></div><span class="dots"></span><span class="p">390 ₽</span></div>
+      <div class="item"><div><h3>Шакшука</h3><small>томаты, перец, фета</small></div><span class="dots"></span><span class="p">450 ₽</span></div>
+      <div class="item"><div><h3>Тост с авокадо</h3><small>яйцо пашот, микрозелень</small></div><span class="dots"></span><span class="p">490 ₽</span></div>
+      <div class="item"><div><h3>Гранола</h3><small>йогурт, сезонные ягоды</small></div><span class="dots"></span><span class="p">340 ₽</span></div>
+    </div>
+    <div class="list" id="sweet">
+      <div class="item"><div><h3>Баскский чизкейк</h3><small>кусок</small></div><span class="dots"></span><span class="p">320 ₽</span></div>
+      <div class="item"><div><h3>Круассан</h3><small>классический / миндальный</small></div><span class="dots"></span><span class="p">180 / 240 ₽</span></div>
+      <div class="item"><div><h3>Кардамоновая булочка</h3><small>по шведскому рецепту</small></div><span class="dots"></span><span class="p">210 ₽</span></div>
+      <div class="item"><div><h3>Брауни</h3><small>с солёной карамелью</small></div><span class="dots"></span><span class="p">250 ₽</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="beans">
+  <div class="wrap">
+    <div class="kicker">Зерно на вынос</div>
+    <h2>Свежая обжарка этой недели</h2>
+    <p class="sub">Пачка 250 г. Смелем под вашу кофеварку бесплатно. Доставка по городу — от 2 пачек.</p>
+    <div class="beans">
+      <article class="bean">
+        <div class="bag" style="background:linear-gradient(135deg,#e3a272,#c87d4b)"><span>ET</span></div>
+        <h3>Эфиопия Гуджи</h3><div class="origin">мытая обработка · 2100 м</div>
+        <div class="notes"><span>бергамот</span><span>персик</span><span>жасмин</span></div>
+        <div class="scale">Обжарка <i class="f"></i><i></i><i></i><i></i><i></i></div>
+        <div class="row"><b>990 ₽</b><button class="btn" data-n="Эфиопия Гуджи">В корзину</button></div>
+      </article>
+      <article class="bean">
+        <div class="bag" style="background:linear-gradient(135deg,#d8b48a,#9b6a43)"><span>CO</span></div>
+        <h3>Колумбия Уила</h3><div class="origin">анаэробная ферментация · 1750 м</div>
+        <div class="notes"><span>красное яблоко</span><span>карамель</span><span>какао</span></div>
+        <div class="scale">Обжарка <i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i></div>
+        <div class="row"><b>890 ₽</b><button class="btn" data-n="Колумбия Уила">В корзину</button></div>
+      </article>
+      <article class="bean">
+        <div class="bag" style="background:linear-gradient(135deg,#a77650,#5a3018)"><span style="color:#f2e8dc">BR</span></div>
+        <h3>Бразилия Серрадо</h3><div class="origin">натуральная обработка · 1100 м</div>
+        <div class="notes"><span>орех</span><span>молочный шоколад</span><span>тростниковый сахар</span></div>
+        <div class="scale">Обжарка <i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></div>
+        <div class="row"><b>690 ₽</b><button class="btn" data-n="Бразилия Серрадо">В корзину</button></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="visit" style="padding-top:0">
+  <div class="wrap visit">
+    <div class="info">
+      <div class="kicker">Как найти</div>
+      <h2>Заходите на чашку</h2>
+      <p class="sub">В зале 24 места, розетки у каждого стола и быстрый Wi-Fi. С собакой — можно.</p>
+      <dl>
+        <dt>Адрес</dt><dd>ул. Литейная, 12 — вход со двора</dd>
+        <dt>Пн–Пт</dt><dd>08:00 – 22:00</dd>
+        <dt>Сб–Вс</dt><dd>09:00 – 23:00</dd>
+        <dt>Телефон</dt><dd>+7 (000) 000-00-00</dd>
+      </dl>
+      <a href="#" class="btn">Построить маршрут</a>
+    </div>
+    <div class="map">
+      <svg viewBox="0 0 500 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <g stroke="#3a2e27" stroke-width="18" fill="none"><path d="M-10 120 H520 M-10 290 H520 M140 -10 V410 M360 -10 V410"/></g>
+        <g stroke="#2e241f" stroke-width="6" fill="none"><path d="M-10 205 H520 M250 -10 V410 M60 -10 V410 M440 -10 V410"/></g>
+        <path d="M290 175 L400 175 L400 112" stroke="#c87d4b" stroke-width="4" stroke-dasharray="8 8" fill="none"/>
+        <circle cx="270" cy="175" r="8" fill="#c87d4b"/>
+        <circle cx="270" cy="175" r="22" fill="#c87d4b" opacity=".2"/>
+        <rect x="380" y="18" width="80" height="80" rx="10" fill="#2a3a2a" opacity=".6"/>
+      </svg>
+      <div class="pin">Медь</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap"><span>© Медь, 2026</span><span>Демо-проект для портфолио. Заведение вымышленное.</span></div>
+</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+document.querySelectorAll('.tabs button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.tabs button, .list').forEach(x => x.classList.remove('on'));
+  b.classList.add('on');
+  document.getElementById(b.dataset.t).classList.add('on');
+}));
+const toast = document.getElementById('toast');
+let timer;
+document.querySelectorAll('.bean .btn').forEach(b => b.addEventListener('click', () => {
+  toast.textContent = b.dataset.n + ' — добавлено в корзину';
+  toast.classList.add('show');
+  clearTimeout(timer);
+  timer = setTimeout(() => toast.classList.remove('show'), 2200);
+}));
+</script>
+</body>
+</html>
