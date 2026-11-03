@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ВариаторЛаб — ремонт вариаторов и АКПП в Ростове-на-Дону</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0f1418;--bg2:#151c22;--card:#1b242c;--ink:#eef2f5;--muted:#8d9aa6;--line:#26323c;--acc:#ffb020;--acc2:#2fd0a0}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Golos Text",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.concept{background:#ffb020;color:#111;font-size:13px;text-align:center;padding:8px 16px;font-weight:600}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(15,20,24,.92);backdrop-filter:blur(10px);z-index:20}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-weight:800;font-size:20px;letter-spacing:.02em}
+.logo b{color:var(--acc)}
+.nav nav{display:flex;gap:26px;color:var(--muted)}
+.nav nav a:hover{color:var(--ink)}
+.tel{font-weight:700;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--acc);color:#111;font:inherit;font-weight:700;padding:15px 26px;border-radius:12px;border:0;cursor:pointer;transition:.2s}
+.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+.hero{padding:80px 0 64px;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.pill{display:inline-flex;gap:8px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14px;margin-bottom:24px}
+.pill b{color:var(--acc)}
+h1{font-size:clamp(36px,5.6vw,66px);line-height:1.02;letter-spacing:-.03em;font-weight:800}
+h1 span{color:var(--acc)}
+.lead{font-size:19px;color:var(--muted);margin:22px 0 32px;max-width:560px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.gear{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px}
+.gear svg{width:100%;height:auto;display:block}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:-8px}
+.hero>*,.facts>*,.diag>*,.svc>*,.far>*,.cta>*{min-width:0}
+.facts div{background:var(--bg2);border:1px solid var(--line);border-radius:16px;padding:20px}
+.facts b{display:block;font-size:26px;font-weight:800}
+.facts span{color:var(--muted);font-size:14px}
+section{padding:88px 0}
+.k{color:var(--acc);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(28px,3.8vw,46px);line-height:1.08;letter-spacing:-.02em;margin-bottom:14px}
+.sub{color:var(--muted);max-width:560px}
+/* diag */
+.diag{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:36px}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px}
+.panel h3{font-size:17px;margin-bottom:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.chips button{font:inherit;font-size:15px;background:var(--bg2);color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:10px 16px;cursor:pointer;transition:.15s}
+.chips button.on{background:var(--acc);color:#111;border-color:var(--acc);font-weight:600}
+.ans{display:flex;flex-direction:column;gap:14px}
+.ans .lvl{display:inline-block;font-size:13px;font-weight:700;padding:5px 12px;border-radius:999px;width:max-content}
+.ans h3{font-size:24px;line-height:1.2}
+.ans p{color:var(--muted)}
+.ans ul{list-style:none;display:grid;gap:8px}
+.ans li{display:flex;gap:10px}
+.ans li::before{content:"→";color:var(--acc)}
+.empty{color:var(--muted);display:grid;place-items:center;text-align:center;min-height:240px}
+/* services */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:36px}
+.s{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:10px}
+.s h3{font-size:19px}
+.s p{color:var(--muted);font-size:15px;flex:1}
+.s .pr{font-weight:800;font-size:22px;color:var(--acc)}
+.brands{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.brands span{font-size:14px;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:6px 12px}
+/* far */
+.far{background:linear-gradient(135deg,#1c2a22,#151c22);border:1px solid #24453a;border-radius:24px;padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:32px;align-items:center}
+.far ol{list-style:none;counter-reset:f;display:grid;gap:14px}
+.far li{counter-increment:f;display:flex;gap:14px;align-items:flex-start}
+.far li::before{content:counter(f);min-width:30px;height:30px;border-radius:50%;background:var(--acc2);color:#0f1418;font-weight:800;display:grid;place-items:center}
+/* form */
+.cta{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+form{display:grid;gap:12px}
+input,select{font:inherit;padding:15px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);width:100%}
+input:focus,select:focus{outline:none;border-color:var(--acc)}
+.ok{display:none;background:#163a2e;color:#9ff0cf;padding:16px;border-radius:12px;font-weight:600}
+.info{display:grid;gap:14px;margin-top:24px}
+.info div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.info span{color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:14px}
+@media (max-width:920px){
+  .nav nav,.tel{display:none}
+  .hero,.diag,.far,.cta{grid-template-columns:1fr}
+  .svc{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  section{padding:64px 0}.hero{padding:44px 0}
+  .svc{grid-template-columns:1fr}
+  .far{padding:28px 20px}
+  .panel{padding:20px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">Вариатор<b>·</b>Лаб</a>
+    <nav><a href="#diag">Симптомы</a><a href="#svc">Услуги и цены</a><a href="#far">Иногородним</a><a href="#contacts">Контакты</a></nav>
+    <a class="tel" href="tel:+70000000000">+7 (000) 000-00-00</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <div class="pill">★ <b>4,9</b> · более 250 отзывов клиентов</div>
+    <h1>Ремонт <span>вариаторов</span> и АКПП в Ростове</h1>
+    <p class="lead">Специализируемся на CVT, АКПП и роботах DSG. Диагностируем, ремонтируем и меняем масло. Новые и контрактные агрегаты — в наличии на месте.</p>
+    <div class="row"><a href="#diag" class="btn">Что с моей коробкой?</a><a href="#contacts" class="btn ghost">Записаться на диагностику</a></div>
+  </div>
+  <div class="gear">
+    <svg viewBox="0 0 320 240" aria-hidden="true">
+      <g fill="none" stroke-width="10">
+        <circle cx="105" cy="120" r="70" stroke="#26323c"/>
+        <circle cx="105" cy="120" r="70" stroke="#ffb020" stroke-dasharray="120 320" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="0 105 120" to="360 105 120" dur="6s" repeatCount="indefinite"/></circle>
+        <circle cx="235" cy="120" r="42" stroke="#26323c"/>
+        <circle cx="235" cy="120" r="42" stroke="#2fd0a0" stroke-dasharray="70 200" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" from="360 235 120" to="0 235 120" dur="3.6s" repeatCount="indefinite"/></circle>
+      </g>
+      <path d="M105 50 L235 78 M105 190 L235 162" stroke="#8d9aa6" stroke-width="4"/>
+      <circle cx="105" cy="120" r="14" fill="#ffb020"/><circle cx="235" cy="120" r="10" fill="#2fd0a0"/>
+      <text x="62" y="228" fill="#8d9aa6" font-family="Golos Text" font-size="13">ведущий шкив · ремень · ведомый шкив</text>
+    </svg>
+  </div>
+</div>
+<div class="wrap facts">
+  <div><b>от 6 000 ₽</b><span>замена масла в CVT / АКПП</span></div>
+  <div><b>от 40 000 ₽</b><span>ремонт вариатора</span></div>
+  <div><b>Гарантия</b><span>на ремонт агрегатов</span></div>
+  <div><b>Эвакуатор</b><span>принимаем машины без владельца</span></div>
+</div>
+
+<section id="diag">
+  <div class="wrap">
+    <div class="k">Онлайн-подсказка</div>
+    <h2>Что беспокоит в коробке?</h2>
+    <p class="sub">Выберите симптом — подскажем, что это может быть и насколько срочно. Точный ответ даст только диагностика.</p>
+    <div class="diag">
+      <div class="panel">
+        <h3>Тип коробки</h3>
+        <div class="chips" id="box"><button class="on" data-v="cvt">Вариатор</button><button data-v="at">Автомат АКПП</button><button data-v="dsg">Робот DSG</button></div>
+        <h3>Симптом</h3>
+        <div class="chips" id="sym">
+          <button data-v="jerk">Рывки при разгоне</button>
+          <button data-v="hum">Гул или вой</button>
+          <button data-v="slip">Пробуксовка, обороты растут</button>
+          <button data-v="kick">Пинок при переключении</button>
+          <button data-v="err">Ошибка / аварийный режим</button>
+          <button data-v="oil">Давно не меняли масло</button>
+        </div>
+      </div>
+      <div class="panel ans" id="ans"><div class="empty">Выберите симптом слева —<br>здесь появится подсказка</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="svc" style="padding-top:0">
+  <div class="wrap">
+    <div class="k">Услуги и цены</div>
+    <h2>Чем занимаемся</h2>
+    <div class="svc">
+      <div class="s"><h3>Ремонт вариаторов CVT</h3><p>Jatco, Aisin, Punch и китайские CVT. Замена ремня, конусов, гидроблока, подшипников.</p><div class="pr">от 40 000 ₽</div></div>
+      <div class="s"><h3>Замена масла в CVT, АКПП, роботе</h3><p>Частичная или полная, с фильтром и очисткой поддона. Можно со своим маслом.</p><div class="pr">от 6 000 ₽</div></div>
+      <div class="s"><h3>Масло в вариаторах китайских авто</h3><p>Chery, Haval, Geely, EXEED, Jaecoo, TANK — допуски производителя.</p><div class="pr">от 6 000 ₽</div></div>
+      <div class="s"><h3>Ремонт АКПП и DSG</h3><p>Гидроблоки, мехатроники, сцепления DSG, адаптация после ремонта.</p><div class="pr">по диагностике</div></div>
+      <div class="s"><h3>Компьютерная диагностика</h3><p>Чтение ошибок, тест-драйв с мастером, проверка давления и состояния масла.</p><div class="pr">по записи</div></div>
+      <div class="s"><h3>ТО и обслуживание</h3><p>Ходовая, промывка инжектора, чистка форсунок, эндоскопия двигателя.</p><div class="pr">по записи</div></div>
+    </div>
+    <div class="brands"><span>Nissan</span><span>Mitsubishi</span><span>Toyota</span><span>Kia</span><span>Hyundai</span><span>Haval</span><span>Chery</span><span>Geely</span><span>EXEED</span><span>VW / Škoda</span><span>Subaru</span><span>Honda</span><span>Lexus</span><span>+ другие</span></div>
+  </div>
+</section>
+
+<section id="far" style="padding-top:0">
+  <div class="wrap far">
+    <div>
+      <div class="k" style="color:var(--acc2)">Из другого города?</div>
+      <h2>Ремонт без вашего приезда</h2>
+      <p class="sub">Принимаем машины на эвакуаторе, держим в курсе по фото и видео, отдаём после ремонта и проверки на ходу.</p>
+    </div>
+    <ol>
+      <li>Пишете в WhatsApp или Telegram — марка, год, симптомы</li>
+      <li>Согласовываем эвакуатор и примерную стоимость</li>
+      <li>Диагностика, фото дефектов, точная смета</li>
+      <li>Ремонт, тест-драйв, гарантия — забираете машину</li>
+    </ol>
+  </div>
+</section>
+
+<section id="contacts" style="padding-top:0">
+  <div class="wrap cta">
+    <div>
+      <div class="k">Запись</div>
+      <h2>Запишитесь на диагностику</h2>
+      <p class="sub">Перезвоним в течение 15 минут в рабочее время и подберём удобный слот.</p>
+      <div class="info">
+        <div><span>Адрес</span><b>ул. Заводская, 15</b></div>
+        <div><span>Телефон</span><b>+7 (000) 000-00-00</b></div>
+        <div><span>Мессенджеры</span><b>WhatsApp · Telegram</b></div>
+      </div>
+    </div>
+    <form id="f">
+      <input placeholder="Имя" required>
+      <input type="tel" placeholder="+7 (___) ___-__-__" required>
+      <input placeholder="Марка, модель и год авто">
+      <select id="fsym"><option>Симптом не выбран</option></select>
+      <button class="btn" type="submit">Записаться на диагностику</button>
+      <div class="ok" id="ok">Заявка отправлена — скоро перезвоним!</div>
+    </form>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">© ВариаторЛаб, 2026 · Демо-проект для портфолио. Компания вымышленная.</div></footer>
+
+<script>
+const D = {
+  jerk:{l:'Стоит проверить скоро',c:'#ffb020',t:'Рывки чаще всего — износ масла или клапанов гидроблока',p:'Если не тянуть, обычно хватает замены масла и чистки гидроблока. Запущенный случай ведёт к замене ремня или конусов.',d:['Проверить состояние и уровень масла','Считать ошибки и адаптации','Тест-драйв с мастером']},
+  hum:{l:'Не откладывайте',c:'#ff6b4a',t:'Гул — типичный признак износа подшипников',p:'Подшипники меняются относительно недорого, но если продолжать ездить, стружка повредит конусы и ремень.',d:['Диагностика на подъёмнике','Оценка стружки на магнитах поддона','Смета до начала работ']},
+  slip:{l:'Срочно',c:'#ff6b4a',t:'Пробуксовка ремня — коробка на грани',p:'Обороты растут, а скорость нет — так проявляется проскальзывание ремня. Лучше не ездить, а приехать на эвакуаторе.',d:['Эвакуатор до сервиса','Вскрытие и дефектовка','Ремонт или контрактный агрегат']},
+  kick:{l:'Стоит проверить скоро',c:'#ffb020',t:'Пинки — гидроблок, масло или адаптация',p:'Часто решается заменой масла и адаптацией, реже — ремонтом гидроблока или мехатроника.',d:['Проверка давления','Замена масла с фильтром','Адаптация коробки']},
+  err:{l:'Срочно',c:'#ff6b4a',t:'Аварийный режим защищает коробку от поломки',p:'Ошибка может быть мелочью вроде датчика, а может — признаком серьёзного износа. Без диагностики не понять.',d:['Чтение кодов ошибок','Проверка датчиков и проводки','Решение по ремонту']},
+  oil:{l:'Профилактика',c:'#2fd0a0',t:'Замена масла — лучшая страховка коробки',p:'Для вариаторов и АКПП рекомендуют менять масло каждые 40–60 тыс. км. Это в разы дешевле любого ремонта.',d:['Масло с допуском производителя','Замена фильтра и очистка поддона','Выставление уровня на прогретой коробке']}
+};
+const boxes={cvt:'вариатор',at:'АКПП',dsg:'робот DSG'};
+const st={box:'cvt',sym:null};
+const fsym=document.getElementById('fsym');
+['Рывки при разгоне','Гул или вой','Пробуксовка','Пинок при переключении','Ошибка на панели','Плановая замена масла'].forEach(s=>fsym.add(new Option(s)));
+function chips(id,key){document.querySelectorAll('#'+id+' button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#'+id+' button').forEach(x=>x.classList.remove('on'));b.classList.add('on');st[key]=b.dataset.v;render();});}
+chips('box','box');chips('sym','sym');
+function render(){
+  if(!st.sym) return;
+  const d=D[st.sym];
+  document.getElementById('ans').innerHTML=`<span class="lvl" style="background:${d.c}22;color:${d.c}">${d.l}</span><h3>${d.t}</h3><p>${d.p} Тип коробки: ${boxes[st.box]}.</p><ul>${d.d.map(x=>'<li>'+x+'</li>').join('')}</ul><a href="#contacts" class="btn" style="margin-top:8px">Записаться на диагностику</a>`;
+  fsym.selectedIndex=Object.keys(D).indexOf(st.sym)+1;
+}
+document.getElementById('f').onsubmit=e=>{e.preventDefault();document.getElementById('ok').style.display='block';e.target.querySelector('button').disabled=true;};
+</script>
+</body>
+</html>

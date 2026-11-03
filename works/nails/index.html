@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nail Room — маникюр, педикюр, брови и ресницы в Ростове</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf6f3;--card:#fff;--ink:#2b1f22;--muted:#87747a;--line:#efe2dc;--rose:#d9667f;--rose-l:#fbe7ec;--nude:#e9cfc4}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Manrope,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.serif{font-family:"Playfair Display",Georgia,serif}
+.concept{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:8px 16px}
+header{position:sticky;top:0;z-index:20;background:rgba(251,246,243,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:"Playfair Display",serif;font-size:26px;font-weight:600}
+.logo i{color:var(--rose)}
+.nav nav{display:flex;gap:26px;color:var(--muted);font-weight:500}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--rose);color:#fff;font:inherit;font-weight:700;padding:15px 28px;border-radius:999px;border:0;cursor:pointer;transition:.2s}
+.btn:hover{background:#c4526b}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center;padding:72px 0}
+.rate{display:inline-flex;gap:10px;align-items:center;font-size:14px;font-weight:600;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 16px;margin-bottom:24px}
+.rate b{color:var(--rose)}
+h1{font-family:"Playfair Display",serif;font-weight:500;font-size:clamp(40px,6vw,74px);line-height:1.02;letter-spacing:-.01em}
+h1 em{color:var(--rose)}
+.lead{font-size:18px;color:var(--muted);max-width:480px;margin:22px 0 32px}
+.row{display:flex;gap:12px;flex-wrap:wrap}
+.art{position:relative;aspect-ratio:1;max-width:440px;justify-self:center;width:100%}
+.art .c1{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 30%,#fff,var(--rose-l) 60%,var(--nude))}
+.nails{position:absolute;inset:16%;display:flex;gap:4%;align-items:flex-end;justify-content:center}
+.nails i{width:14%;border-radius:999px 999px 30% 30%;background:linear-gradient(180deg,var(--rose),#b94761);box-shadow:inset 0 6px 0 rgba(255,255,255,.35)}
+.nails i:nth-child(1){height:46%}.nails i:nth-child(2){height:66%}.nails i:nth-child(3){height:74%}.nails i:nth-child(4){height:64%}.nails i:nth-child(5){height:40%;background:linear-gradient(180deg,var(--nude),#cfa996)}
+.badge{position:absolute;background:var(--card);border-radius:18px;padding:14px 18px;box-shadow:0 20px 40px -20px rgba(43,31,34,.3);font-size:14px}
+.badge b{display:block;font-size:20px}
+.b1{left:-4%;top:14%}.b2{right:-4%;bottom:12%}
+section{padding:88px 0}
+.k{font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--rose);margin-bottom:12px}
+h2{font-family:"Playfair Display",serif;font-weight:500;font-size:clamp(32px,4.4vw,52px);line-height:1.05;margin-bottom:14px}
+.sub{color:var(--muted);max-width:560px}
+.why{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
+.why div{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:26px}
+.why b{font-family:"Playfair Display",serif;font-size:22px;font-weight:500;display:block;margin-bottom:6px}
+.why p{color:var(--muted);font-size:15px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:32px 0 20px}
+.tabs button{font:inherit;font-weight:600;padding:10px 20px;border-radius:999px;border:1px solid var(--line);background:var(--card);cursor:pointer;color:var(--muted)}
+.tabs button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.plist{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:8px 28px}
+.pi{display:grid;grid-template-columns:1fr auto auto;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--line)}
+.pi:last-child{border-bottom:0}
+.pi small{display:block;color:var(--muted);font-size:14px}
+.pi .p{font-weight:700;font-size:18px;white-space:nowrap}
+.pi button{font:inherit;font-size:14px;font-weight:600;color:var(--rose);background:var(--rose-l);border:0;border-radius:999px;padding:8px 14px;cursor:pointer}
+.pi button.added{background:var(--rose);color:#fff}
+.cart{position:fixed;left:50%;bottom:20px;transform:translate(-50%,140%);background:var(--ink);color:#fff;border-radius:999px;padding:10px 10px 10px 24px;display:flex;gap:18px;align-items:center;transition:.3s;z-index:30;box-shadow:0 20px 40px -10px rgba(0,0,0,.4);max-width:calc(100% - 32px)}
+.cart.show{transform:translate(-50%,0)}
+.cart .btn{padding:11px 20px}
+.happy{background:var(--ink);color:#fff;border-radius:28px;padding:48px;display:grid;grid-template-columns:1.3fr .7fr;gap:32px;align-items:center}
+.happy h2{color:#fff}
+.happy .sub{color:#c9b8bd}
+.happy .big{font-family:"Playfair Display",serif;font-size:72px;color:var(--rose);line-height:1;text-align:right}
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cc{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:32px;display:grid;gap:16px}
+.cc div{display:flex;justify-content:space-between;gap:16px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.cc span{color:var(--muted)}
+.map{border-radius:24px;background:linear-gradient(135deg,var(--rose-l),var(--nude));min-height:280px;position:relative;overflow:hidden}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:900px){
+  .nav nav{display:none}
+  .hero,.happy,.contacts{grid-template-columns:1fr}
+  .why{grid-template-columns:1fr 1fr}
+  .happy .big{text-align:left}
+  .art{max-width:320px}
+}
+@media (max-width:560px){
+  section{padding:64px 0}.hero{padding:40px 0}
+  .why{grid-template-columns:1fr}
+  .pi{grid-template-columns:1fr auto}
+  .pi button{grid-column:1/-1;justify-self:start}
+  .plist{padding:4px 18px}
+  .happy{padding:28px 22px}
+  .b1{left:0}.b2{right:0}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo">Nail <i>Room</i></a>
+    <nav><a href="#price">Цены</a><a href="#happy">Счастливые часы</a><a href="#contacts">Контакты</a></nav>
+    <a href="#price" class="btn">Записаться</a>
+  </div>
+</header>
+
+<main>
+<div class="wrap hero">
+  <div>
+    <div class="rate">★ <b>5,0</b> · 800+ отзывов гостей</div>
+    <h1>Маникюр, который <em>держится</em> и радует</h1>
+    <p class="lead">Маникюр, педикюр, брови и ресницы в центре Ростова. Одноразовые наборы для каждого гостя, любые покрытия и кешбэк с каждой услуги.</p>
+    <div class="row"><a href="#price" class="btn">Выбрать услугу</a><a href="#contacts" class="btn line">Как нас найти</a></div>
+  </div>
+  <div class="art">
+    <div class="c1"></div>
+    <div class="nails"><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="badge b1"><b>от 1 400 ₽</b>маникюр</div>
+    <div class="badge b2"><b>4 690 ₽</b>маникюр + педикюр</div>
+  </div>
+</div>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="k">Почему к нам</div>
+    <h2>Красота без компромиссов</h2>
+    <div class="why">
+      <div><b>Стерильно</b><p>Индивидуальный одноразовый набор для каждого гостя.</p></div>
+      <div><b>Надолго</b><p>Покрытие гель-лаком любой фирмы и топ с нужным эффектом.</p></div>
+      <div><b>Выгодно</b><p>Кешбэк с услуг и скидки на комплексы.</p></div>
+      <div><b>Всё в одном</b><p>Ногти, брови и ресницы — за один визит.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="price" style="padding-top:0">
+  <div class="wrap">
+    <div class="k">Цены</div>
+    <h2>Выберите услуги — запишем за минуту</h2>
+    <p class="sub">Добавьте услуги в запись, и мы пришлём свободные окна в WhatsApp или Telegram.</p>
+    <div class="tabs" id="tabs"></div>
+    <div class="plist" id="plist"></div>
+  </div>
+</section>
+
+<section id="happy" style="padding-top:0">
+  <div class="wrap happy">
+    <div>
+      <div class="k">Акция</div>
+      <h2>Комплекс «маникюр + педикюр» с покрытием</h2>
+      <p class="sub">Руки и ноги за один визит, выгоднее, чем по отдельности. В стоимость входят снятие, форма, обработка и покрытие гель-лаком.</p>
+    </div>
+    <div class="big">4 690 ₽</div>
+  </div>
+</section>
+
+<section id="contacts" style="padding-top:0">
+  <div class="wrap">
+    <div class="k">Контакты</div>
+    <h2>Ждём вас в студии</h2>
+    <div class="contacts">
+      <div class="cc">
+        <div><span>Адрес</span><b>ул. Цветочная, 12</b></div>
+        <div><span>Телефон</span><b>+7 (000) 000-00-00</b></div>
+        <div><span>Telegram</span><b>@nailroom</b></div>
+        <div><span>ВКонтакте</span><b>nailroom</b></div>
+        <a href="#price" class="btn">Записаться онлайн</a>
+      </div>
+      <div class="map"><svg viewBox="0 0 400 280" preserveAspectRatio="xMidYMid slice"><g stroke="#fff" stroke-width="14" opacity=".7"><path d="M-10 90H420M-10 200H420M120 -10V300M290 -10V300"/></g><circle cx="205" cy="145" r="30" fill="#d9667f" opacity=".2"/><circle cx="205" cy="145" r="10" fill="#d9667f"/></svg></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">© Nail Room, 2026 · Демо-проект для портфолио. Компания вымышленная.</div></footer>
+<div class="cart" id="cart"><span id="cartTxt"></span><a class="btn" href="#contacts">Записаться</a></div>
+
+<script>
+const P = {
+  'Маникюр':[['Маникюр комбинированный','без покрытия',1400],['Маникюр + покрытие гель-лак','снятие, форма, кутикула, гель-лак, топ',2200],['Маникюр + гель-лак + френч','',2700],['Маникюр + покрытие лаком','',1900],['Укрепление гелем','добавляется к маникюру',400]],
+  'Педикюр':[['Педикюр + покрытие гель-лак','обработка стопы, гель-лак, массаж кремом',2690],['Японский педикюр','питание и глянцевание ногтей',2700],['Пленочный педикюр','',2900],['Педикюр без покрытия','',2000],['Массаж ног','10 минут после услуги',400]],
+  'Комплексы':[['Маникюр + педикюр с гель-лаком','акционная цена',4690]],
+  'Брови':[['Коррекция + окрашивание','хна или краска',1500],['«Счастье для бровей» + коррекция','',1200],['Осветление бровей','',600]],
+  'Ресницы':[['Наращивание 2D','снятие включено',1990],['Объёмное наращивание 2,5D','',2490],['Наращивание 3D','',2990]]
+};
+const sel=new Map();
+const fmt=n=>n.toLocaleString('ru-RU')+' ₽';
+const tabs=document.getElementById('tabs'), list=document.getElementById('plist');
+function show(cat){
+  [...tabs.children].forEach(b=>b.classList.toggle('on',b.textContent===cat));
+  list.innerHTML='';
+  P[cat].forEach(([n,d,p])=>{
+    const row=document.createElement('div'); row.className='pi';
+    row.innerHTML=`<div>${n}${d?'<small>'+d+'</small>':''}</div><div class="p">${fmt(p)}</div>`;
+    const b=document.createElement('button');
+    const upd=()=>{b.textContent=sel.has(n)?'✓ В записи':'+ В запись';b.classList.toggle('added',sel.has(n));};
+    b.onclick=()=>{sel.has(n)?sel.delete(n):sel.set(n,p);upd();cart();};
+    upd(); row.appendChild(b); list.appendChild(row);
+  });
+}
+function cart(){
+  const c=document.getElementById('cart');
+  const sum=[...sel.values()].reduce((a,b)=>a+b,0);
+  document.getElementById('cartTxt').textContent=`${sel.size} усл. · ${fmt(sum)}`;
+  c.classList.toggle('show',sel.size>0);
+}
+Object.keys(P).forEach(c=>{const b=document.createElement('button');b.textContent=c;b.onclick=()=>show(c);tabs.appendChild(b);});
+show('Маникюр');
+</script>
+</body>
+</html>
