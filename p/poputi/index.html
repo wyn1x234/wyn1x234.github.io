@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Попутно — делите такси с попутчиками</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f5f1;--card:#fff;--ink:#16181d;--muted:#6b7079;--line:#e6e3dc;--acc:#ffcc00;--acc-ink:#16181d;--ok:#12a150;--note:#3b5bdb}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:"Golos Text",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit;color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.concept{background:var(--ink);color:#fff;font-size:13px;text-align:center;padding:9px 16px;display:flex;gap:12px;justify-content:center;align-items:center;flex-wrap:wrap}
+.concept button{background:var(--acc);color:var(--acc-ink);border:0;border-radius:999px;padding:5px 12px;font-weight:700;cursor:pointer;font-size:13px}
+header{position:sticky;top:0;z-index:20;background:rgba(246,245,241,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-weight:800;font-size:21px;display:flex;align-items:center;gap:8px}
+.logo i{width:26px;height:26px;border-radius:8px;background:var(--acc);display:grid;place-items:center;font-style:normal;font-size:15px}
+.nav nav{display:flex;gap:24px;color:var(--muted);font-size:15px}
+.nav nav a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--acc);color:var(--acc-ink);font-weight:700;padding:14px 22px;border-radius:12px;border:0;cursor:pointer;transition:.15s}
+.btn:hover{filter:brightness(.96)}
+.btn.dark{background:var(--ink);color:#fff}
+.btn.sm{padding:10px 16px;font-size:15px}
+.note{display:none;margin:10px 0 0;background:#eef2ff;border-left:3px solid var(--note);color:#24336b;font-size:14px;padding:10px 12px;border-radius:0 8px 8px 0}
+body.notes .note{display:block}
+section{padding:64px 0}
+h1{font-size:clamp(34px,5.4vw,58px);line-height:1.04;letter-spacing:-.03em;font-weight:800}
+h1 mark{background:var(--acc);padding:0 .12em;border-radius:6px}
+h2{font-size:clamp(26px,3.6vw,38px);letter-spacing:-.02em;line-height:1.1;margin-bottom:8px}
+.sub{color:var(--muted);font-size:17px;max-width:620px}
+.hero{padding:48px 0 40px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero>*{min-width:0}
+.lead{font-size:19px;color:var(--muted);margin:18px 0 0;max-width:520px}
+.search{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;box-shadow:0 20px 50px -30px rgba(0,0,0,.35)}
+.search h3{font-size:18px;margin-bottom:14px}
+.field{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:10px;background:#fbfaf7}
+.field b{width:10px;height:10px;border-radius:50%;flex:none}
+.field input,.field select{border:0;background:transparent;outline:0;width:100%;min-width:0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.split{display:flex;justify-content:space-between;align-items:center;background:#fff8d6;border-radius:12px;padding:12px 14px;margin:6px 0 12px;font-size:15px}
+.split strong{font-size:22px}
+.split s{color:var(--muted);margin-right:6px}
+.search .btn{width:100%}
+.trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px;color:var(--muted);font-size:14px}
+.trust span::before{content:"✓ ";color:var(--ok);font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.step em{font-style:normal;width:34px;height:34px;border-radius:10px;background:var(--acc);display:grid;place-items:center;font-weight:800;margin-bottom:14px}
+.step h3{font-size:18px;margin-bottom:6px}
+.step p{color:var(--muted);font-size:15px}
+.rides-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:999px;padding:8px 14px;font-size:14px;cursor:pointer}
+.chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.rides{display:grid;gap:10px;margin-top:20px}
+.ride{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:grid;grid-template-columns:80px 1fr auto auto;gap:18px;align-items:center}
+.ride>*{min-width:0}
+.time{font-weight:800;font-size:22px}
+.time small{display:block;font-weight:500;font-size:13px;color:var(--muted)}
+.route{font-weight:600}
+.route span{color:var(--muted);font-weight:400;font-size:14px;display:block}
+.seats{display:flex;gap:4px}
+.seats i{width:14px;height:14px;border-radius:4px;background:var(--line)}
+.seats i.f{background:var(--ink)}
+.price{text-align:right;white-space:nowrap}
+.price strong{font-size:20px;display:block}
+.price span{font-size:13px;color:var(--muted)}
+.empty{padding:24px;text-align:center;color:var(--muted);background:var(--card);border-radius:16px;border:1px dashed var(--line)}
+.calc{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center;background:var(--ink);color:#fff;border-radius:24px;padding:36px}
+.calc>*{min-width:0}
+.calc .sub{color:#b4b8c0}
+.calc label{display:block;font-size:14px;color:#b4b8c0;margin:14px 0 6px}
+.calc input[type=range]{width:100%;accent-color:var(--acc)}
+.calc .res{background:#22252c;border-radius:18px;padding:24px}
+.calc .res div{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #30343c}
+.calc .res div:last-child{border:0}
+.calc .res strong{color:var(--acc);font-size:28px}
+.safe{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+.safe div{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px}
+.safe b{display:block;margin-bottom:4px}
+.safe p{font-size:14px;color:var(--muted)}
+.faq details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:10px}
+.faq summary{font-weight:600;cursor:pointer}
+.faq p{color:var(--muted);margin-top:8px}
+.cta{text-align:center;background:var(--acc);border-radius:24px;padding:44px 20px}
+.cta p{margin:10px auto 22px;max-width:520px}
+.stores{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+footer{padding:30px 0 90px;color:var(--muted);font-size:14px}
+.mbar{display:none}
+@media (max-width:860px){
+ .nav nav{display:none}
+ .hero,.calc{grid-template-columns:1fr}
+ .steps,.safe{grid-template-columns:1fr 1fr}
+ .ride{grid-template-columns:64px 1fr;gap:10px 14px}
+ .seats{grid-column:2}
+ .price{grid-column:1/-1;text-align:left;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:10px}
+ .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30}
+ .mbar .btn{width:100%;box-shadow:0 10px 30px -10px rgba(0,0,0,.4)}
+ section{padding:48px 0}
+ .calc{padding:24px}
+}
+@media (max-width:520px){.steps,.safe{grid-template-columns:1fr}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="concept">Набросок layout для обсуждения — тексты и цифры условные <button id="nt" type="button">Показать заметки к блокам</button></div>
+<header><div class="wrap nav">
+ <a class="logo" href="#"><i>⇄</i>Попутно</a>
+ <nav><a href="#how">Как это работает</a><a href="#rides">Поездки</a><a href="#calc">Сколько сэкономлю</a><a href="#safe">Безопасность</a></nav>
+ <a class="btn sm dark" href="#find">Найти попутчиков</a>
+</div></header>
+
+<main>
+<div class="wrap hero" id="find">
+ <div>
+  <h1>Едете вместе — <mark>платите меньше</mark></h1>
+  <p class="lead">Найдите попутчиков с похожим маршрутом и разделите стоимость обычного такси на всех.</p>
+  <div class="trust"><span>Проверенный телефон у каждого</span><span>Оплата делится автоматически</span><span>Можно ехать только с девушками</span></div>
+  <p class="note">Первый экран: обещание выгоды в заголовке + сразу форма поиска. Человек пришёл с конкретным маршрутом — не заставляем листать. Три строки доверия снимают главный страх «ехать с незнакомыми».</p>
+ </div>
+ <form class="search" onsubmit="event.preventDefault();document.getElementById('rides').scrollIntoView()">
+  <h3>Куда едем?</h3>
+  <label class="field"><b style="background:var(--ok)"></b><input value="м. Пролетарская" aria-label="Откуда"></label>
+  <label class="field"><b style="background:#e8590c"></b><input value="Аэропорт Платов" aria-label="Куда"></label>
+  <div class="two">
+   <label class="field"><select aria-label="Когда"><option>Сегодня, 18:30</option><option>Сегодня, 20:00</option><option>Завтра, 07:15</option></select></label>
+   <label class="field"><select aria-label="Мест"><option>1 место</option><option>2 места</option></select></label>
+  </div>
+  <div class="split"><span>Такси на одного <s>1 240 ₽</s></span><span>с попутчиками <strong>от 420 ₽</strong></span></div>
+  <button class="btn">Показать попутчиков</button>
+  <p class="note">Цена «до/после» прямо в форме — главный аргумент виден до клика. Поле «мест» нужно, если едут вдвоём.</p>
+ </form>
+</div>
+
+<section id="how"><div class="wrap">
+ <h2>Как это работает</h2>
+ <p class="sub">Три шага, без регистрации до момента, когда нашлись попутчики.</p>
+ <div class="steps">
+  <div class="step"><em>1</em><h3>Укажите маршрут</h3><p>Откуда, куда и когда. Подбираем людей, чей путь совпадает хотя бы на 80%.</p></div>
+  <div class="step"><em>2</em><h3>Присоединитесь к поездке</h3><p>Или создайте свою — попутчики увидят её и присоединятся.</p></div>
+  <div class="step"><em>3</em><h3>Едете и делите чек</h3><p>Такси вызывается на всех, каждый платит свою часть в приложении.</p></div>
+ </div>
+ <p class="note">Объясняем механику до списка поездок: без этого блока непонятно, кто вызывает такси и как делятся деньги — это главный вопрос новичка.</p>
+</div></section>
+
+<section id="rides" style="padding-top:0"><div class="wrap">
+ <div class="rides-head">
+  <div><h2>Ближайшие поездки</h2><p class="sub">м. Пролетарская → Аэропорт Платов</p></div>
+  <div class="chips" id="chips"><button class="chip on" data-f="all">Все</button><button class="chip" data-f="soon">В ближайший час</button><button class="chip" data-f="women">Только девушки</button><button class="chip" data-f="bags">С багажом</button></div>
+ </div>
+ <div class="rides" id="list"></div>
+ <p class="note">Карточка поездки: время → маршрут → свободные места → цена «с человека». Глаз читает слева направо в порядке принятия решения. Фильтры — только те, что реально влияют на выбор.</p>
+</div></section>
+
+<section id="calc" style="padding-top:0"><div class="wrap">
+ <div class="calc">
+  <div>
+   <h2>Сколько вы сэкономите</h2>
+   <p class="sub">Посчитайте для своей обычной поездки.</p>
+   <label for="cp">Такси обычно стоит: <b id="cpv">900 ₽</b></label>
+   <input type="range" id="cp" min="300" max="3000" step="50" value="900">
+   <label for="cn">Едем вместе: <b id="cnv">3 человека</b></label>
+   <input type="range" id="cn" min="2" max="4" value="3">
+   <label for="cw">Таких поездок в неделю: <b id="cwv">4</b></label>
+   <input type="range" id="cw" min="1" max="14" value="4">
+  </div>
+  <div class="res">
+   <div><span>С вас за поездку</span><b id="r1"></b></div>
+   <div><span>Экономия за поездку</span><b id="r2"></b></div>
+   <div><span>Экономия в месяц</span><strong id="r3"></strong></div>
+  </div>
+ </div>
+ <p class="note">Калькулятор превращает абстрактное «дешевле» в личную сумму в месяц — это сильнее любого текста. Хорошо работает для тех, кто ездит на работу каждый день.</p>
+</div></section>
+
+<section id="safe" style="padding-top:0"><div class="wrap">
+ <h2>Безопасно ехать с незнакомыми</h2>
+ <div class="safe">
+  <div><b>Подтверждённый телефон</b><p>Без него присоединиться к поездке нельзя.</p></div>
+  <div><b>Рейтинг попутчиков</b><p>После поездки все оценивают друг друга.</p></div>
+  <div><b>Женские поездки</b><p>Фильтр, чтобы ехать только с девушками.</p></div>
+  <div><b>Маршрут — близким</b><p>Отправьте ссылку на поездку в один тап.</p></div>
+ </div>
+ <p class="note">Отдельный блок про безопасность обязателен: это главный барьер у сервиса совместных поездок. Ставим его после выгоды — сначала «зачем», потом «а не страшно ли».</p>
+</div></section>
+
+<section class="faq" style="padding-top:0"><div class="wrap">
+ <h2>Частые вопросы</h2>
+ <details><summary>Кто вызывает такси?</summary><p>Первый, кто создал поездку. Остальные переводят свою часть в приложении до посадки.</p></details>
+ <details><summary>Что если попутчик не пришёл?</summary><p>Его часть списывается с него, вы платите только свою.</p></details>
+ <details><summary>Можно ли выйти раньше остальных?</summary><p>Да, если точка по пути. Стоимость пересчитывается по километражу.</p></details>
+ <details><summary>Какие такси поддерживаются?</summary><p>Любой агрегатор: вызываете привычное приложение, мы делим чек.</p></details>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+ <div class="cta">
+  <h2>Следующая поездка — дешевле</h2>
+  <p>Скачайте приложение или найдите попутчиков прямо на сайте.</p>
+  <div class="stores"><a class="btn dark" href="#find">Найти попутчиков</a><a class="btn dark" href="#">App Store</a><a class="btn dark" href="#">Google Play</a></div>
+ </div>
+</div></section>
+</main>
+
+<footer><div class="wrap">Попутно · набросок layout · сделано в WYN Studio</div></footer>
+<div class="mbar"><a class="btn" href="#find">Найти попутчиков</a></div>
+<p class="note" style="position:fixed;bottom:76px;left:12px;right:12px;z-index:31;max-width:420px">На телефоне кнопка поиска закреплена внизу — до неё всегда дотягивается большой палец.</p>
+
+<script>
+const rides=[
+ {t:"18:10",d:"через 25 мин",from:"м. Пролетарская",to:"Аэропорт Платов",note:"Выезд от ТЦ «Сокол»",seats:[1,1,0],price:410,full:1240,tags:["soon","bags"]},
+ {t:"18:30",d:"через 45 мин",from:"ул. Текучёва, 139",to:"Аэропорт Платов",note:"2 мин пешком от вас",seats:[1,0,0],price:470,full:1180,tags:["soon","women"]},
+ {t:"19:15",d:"через 1,5 ч",from:"м. Пролетарская",to:"Аэропорт Платов, терминал",note:"Есть место для чемодана",seats:[1,1,1,0],price:330,full:1300,tags:["bags"]},
+ {t:"20:00",d:"через 2 ч",from:"Буденновский, 68",to:"Аэропорт Платов",note:"Только девушки",seats:[1,0,0],price:480,full:1260,tags:["women"]}
+];
+const list=document.getElementById('list');
+function render(f){
+ const r=rides.filter(x=>f==='all'||x.tags.includes(f));
+ list.innerHTML=r.length?r.map(x=>`<div class="ride"><div class="time">${x.t}<small>${x.d}</small></div><div class="route">${x.from} → ${x.to}<span>${x.note}</span></div><div class="seats" title="Занято мест">${x.seats.map(s=>`<i class="${s?'f':''}"></i>`).join('')}</div><div class="price"><span>такси ${x.full.toLocaleString('ru')} ₽</span><strong>${x.price} ₽</strong><button class="btn sm">Еду</button></div></div>`).join(''):'<div class="empty">Нет поездок с таким фильтром — создайте свою</div>';
+}
+document.getElementById('chips').addEventListener('click',e=>{const b=e.target.closest('.chip');if(!b)return;document.querySelectorAll('.chip').forEach(c=>c.classList.toggle('on',c===b));render(b.dataset.f)});
+render('all');
+const fmt=n=>Math.round(n).toLocaleString('ru')+' ₽';
+const cp=document.getElementById('cp'),cn=document.getElementById('cn'),cw=document.getElementById('cw');
+function calc(){const p=+cp.value,n=+cn.value,w=+cw.value,mine=p/n;
+ document.getElementById('cpv').textContent=fmt(p);document.getElementById('cnv').textContent=n+(n<5?' человека':' человек');document.getElementById('cwv').textContent=w;
+ document.getElementById('r1').textContent=fmt(mine);document.getElementById('r2').textContent=fmt(p-mine);document.getElementById('r3').textContent=fmt((p-mine)*w*4.3);}
+[cp,cn,cw].forEach(i=>i.addEventListener('input',calc));calc();
+const nt=document.getElementById('nt');nt.addEventListener('click',()=>{const on=document.body.classList.toggle('notes');nt.textContent=on?'Скрыть заметки':'Показать заметки к блокам'});
+if(location.hash==='#notes'){nt.click()}
+</script>
+</body>
+</html>
