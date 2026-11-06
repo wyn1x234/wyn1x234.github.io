@@ -30,6 +30,8 @@ header{position:sticky;top:0;z-index:20;background:rgba(246,245,241,.92);backdro
 .btn.sm{padding:10px 16px;font-size:15px}
 .note{display:none;margin:10px 0 0;background:#eef2ff;border-left:3px solid var(--note);color:#24336b;font-size:14px;padding:10px 12px;border-radius:0 8px 8px 0}
 body.notes .note{display:block}
+.mnote{position:fixed;bottom:76px;left:12px;right:12px;z-index:31;max-width:420px}
+body.notes .mnote{display:none}
 section{padding:64px 0}
 h1{font-size:clamp(34px,5.4vw,58px);line-height:1.04;letter-spacing:-.03em;font-weight:800}
 h1 mark{background:var(--acc);padding:0 .12em;border-radius:6px}
@@ -101,6 +103,7 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:14px}
  .ride{grid-template-columns:64px 1fr;gap:10px 14px}
  .seats{grid-column:2}
  .price{grid-column:1/-1;text-align:left;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:10px}
+ body.notes .mnote{display:block}
  .mbar{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:30}
  .mbar .btn{width:100%;box-shadow:0 10px 30px -10px rgba(0,0,0,.4)}
  section{padding:48px 0}
@@ -210,7 +213,7 @@ footer{padding:30px 0 90px;color:var(--muted);font-size:14px}
 
 <footer><div class="wrap">Попутно · набросок layout · сделано в WYN Studio</div></footer>
 <div class="mbar"><a class="btn" href="#find">Найти попутчиков</a></div>
-<p class="note" style="position:fixed;bottom:76px;left:12px;right:12px;z-index:31;max-width:420px">На телефоне кнопка поиска закреплена внизу — до неё всегда дотягивается большой палец.</p>
+<p class="note mnote">На телефоне кнопка поиска закреплена внизу — до неё всегда дотягивается большой палец.</p>
 
 <script>
 const rides=[
