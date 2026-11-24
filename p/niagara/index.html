@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Line — Niagara Falls to Burlington GO, every weekday morning</title>
+<meta name="description" content="A shared minivan shuttle from Niagara Falls and St. Catharines to Burlington GO, every weekday morning. $34.90–$49.90 per seat, booked online.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip" href="#book">Skip to booking</a>
+
+<header class="top">
+  <div class="wrap top__in">
+    <a class="brand" href="#top">
+      <span class="brand__mark" aria-hidden="true"></span>
+      <span>Morning Line</span>
+    </a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#how">How it works</a>
+      <a href="#timetable">Timetable</a>
+      <a href="#fares">Fares</a>
+      <a href="#rules">Rules</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn--sm" href="#book">Reserve a seat</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow">Mon–Fri · Niagara Falls → St. Catharines → Burlington GO</p>
+        <h1>A smarter way from Niagara to Toronto, every morning.</h1>
+        <ul class="benefits">
+          <li><b>$34.90 per seat when the van is full.</b> A taxi on your own is $120 or more.</li>
+          <li><b>The fuller the van, the lower your fare.</b> Book early and watch it drop.</li>
+          <li><b>One stop in St. Catharines.</b> Burlington GO by 08:05, the 08:12 train to Union.</li>
+          <li><b>Niagara Falls Taxi vans and drivers.</b> Nearly 50 years on the road, $5M liability cover.</li>
+        </ul>
+        <div class="hero__cta">
+          <a class="btn" href="#book">Reserve a seat</a>
+          <a class="btn btn--ghost" href="#timetable">See the timetable</a>
+        </div>
+      </div>
+
+      <form class="card" id="book" novalidate>
+        <div class="card__head">
+          <h2>Reserve a seat</h2>
+          <p class="muted" id="departureLabel">06:45</p>
+        </div>
+
+        <label class="field">
+          <span>Pickup</span>
+          <select id="route" name="route">
+            <option value="niagara">Niagara Falls — downtown, 06:45</option>
+            <option value="stcath">St. Catharines — Fairview Mall, 07:05</option>
+          </select>
+        </label>
+
+        <div class="field-row">
+          <label class="field">
+            <span>Date</span>
+            <select id="date" name="date"></select>
+          </label>
+          <label class="field">
+            <span>Seats</span>
+            <select id="seats" name="seats">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="fare">
+          <div class="fare__row">
+            <span>Seats taken in the van</span>
+            <b><span id="booked">4</span> / 7</b>
+          </div>
+          <div class="bar"><i id="bar"></i></div>
+          <div class="fare__price">
+            <span>Fare now, per seat</span>
+            <b id="fare">$49.90</b>
+          </div>
+          <p class="hint" id="fareHint">This is your cap. More passengers can only lower it.</p>
+        </div>
+
+        <button class="btn btn--full" type="submit">Reserve and authorise card</button>
+        <p class="status" data-status></p>
+        <p class="fine">Booking closes 12 hours before departure, at 18:45 the evening before. Card is authorised now and charged after the ride.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="strip">
+    <div class="wrap strip__in">
+      <div><b>3</b><span>stops on the route</span></div>
+      <div><b>1</b><span>run every weekday</span></div>
+      <div><b>7</b><span>seats per van</span></div>
+      <div><b>12 h</b><span>before departure bookings close</span></div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="wrap">
+      <p class="eyebrow">How it works</p>
+      <h2>Three steps, and the fare falls on its own.</h2>
+      <ol class="steps">
+        <li>
+          <span class="steps__n">01</span>
+          <h3>Pick your stop</h3>
+          <p>Niagara Falls downtown at 06:45, or Fairview Mall in St. Catharines at 07:05. One van, one route, no changes.</p>
+        </li>
+        <li>
+          <span class="steps__n">02</span>
+          <h3>Book online</h3>
+          <p>Bookings open three days ahead and close 12 hours before departure. You see how many seats are already taken and what yours costs today.</p>
+        </li>
+        <li>
+          <span class="steps__n">03</span>
+          <h3>Ride and split</h3>
+          <p>Everyone in the van pays the same share for that number of passengers. The fuller the van, the lower the fare — and your price never rises after booking.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--deep" id="timetable">
+    <div class="wrap">
+      <p class="eyebrow">Timetable</p>
+      <h2>One van, three stops, every business day.</h2>
+      <p class="lead">We run Monday to Friday. Weekend and holiday trips are available on request.</p>
+
+      <div class="table-wrap">
+        <table class="tt">
+          <thead>
+            <tr>
+              <th>Stop</th>
+              <th>Where</th>
+              <th>Time</th>
+              <th>Note</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Niagara Falls</td>
+              <td>Downtown, near the train station</td>
+              <td>06:45</td>
+              <td>Departure</td>
+            </tr>
+            <tr>
+              <td>St. Catharines</td>
+              <td>Fairview Mall, YMCA Drive entrance</td>
+              <td>07:05</td>
+              <td>One stop</td>
+            </tr>
+            <tr>
+              <td>Burlington GO</td>
+              <td>Station forecourt</td>
+              <td>07:55–08:05</td>
+              <td>Arrival estimate</td>
+            </tr>
+            <tr>
+              <td>Union Station</td>
+              <td>GO train from Burlington</td>
+              <td>08:12</td>
+              <td>Next connection 08:43</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">Arrival times are estimates and cannot be guaranteed — traffic is outside our control. If a delay makes you miss the 08:12 train, the next connection leaves at 08:43.</p>
+    </div>
+  </section>
+
+  <section class="section" id="fares">
+    <div class="wrap">
+      <p class="eyebrow">Fares</p>
+      <h2>One way, per seat, Niagara to Burlington GO.</h2>
+      <p class="lead">The price depends on how many people travel. You see the current fare before you book, and it can only go down.</p>
+
+      <div class="fares">
+        <table class="price">
+          <thead>
+            <tr><th>Passengers in the van</th><th>Fare per seat</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>7</td><td>$34.90</td></tr>
+            <tr><td>5–6</td><td>$39.90</td></tr>
+            <tr><td>3–4</td><td>$49.90</td></tr>
+          </tbody>
+        </table>
+
+        <div class="fares__notes">
+          <h3>What is included</h3>
+          <ul>
+            <li>Comfortable Niagara Falls Taxi vehicles with up to 7 seats, including wheelchair-accessible minivans.</li>
+            <li>Professional drivers of a local Niagara company operating for almost 50 years, with $5M business liability insurance.</li>
+            <li>Card authorised at booking and charged after the ride — no cash in the van.</li>
+            <li>Booking window: from 3 days ahead until 12 hours before departure (18:45 the evening before).</li>
+            <li>Regular commuter discounts, starting from 5 rides a month.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tint" id="rules">
+    <div class="wrap">
+      <p class="eyebrow">Before you book</p>
+      <h2>What fits in the van.</h2>
+      <div class="rules">
+        <article class="rule">
+          <h3>Luggage</h3>
+          <p>Up to 4 large or 8 small bags in the van. Tell us in the booking note if you carry more.</p>
+        </article>
+        <article class="rule">
+          <h3>Children</h3>
+          <p>From 10 years old, quiet, and no more than one child per adult. Younger children need a private car for now.</p>
+        </article>
+        <article class="rule">
+          <h3>Pets</h3>
+          <p>In a carrier only. Without a carrier the driver can refuse the ride and the fare stays charged.</p>
+        </article>
+        <article class="rule">
+          <h3>Accessibility</h3>
+          <p>Wheelchair-accessible minivans are part of the fleet. They take fewer regular seats, so book a day ahead when you can.</p>
+        </article>
+      </div>
+
+      <div class="terms">
+        <h3>Fares and cancellations</h3>
+        <p>Your seat price is fixed at the moment of booking and can only fall. If fewer people travel than expected, you still pay no more than your cap — the difference is ours, never yours.</p>
+        <p>Cancellation is free up to 24 hours before departure. Between 24 and 12 hours we keep 80% of the fare, under 12 hours — the full fare. This is what keeps other passengers' prices from rising when someone drops out.</p>
+        <p>A passenger who is not fit to travel can be removed from the run under the terms accepted at booking. The fare is not refunded in that case.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="feedback">
+    <div class="wrap request">
+      <div class="request__copy">
+        <p class="eyebrow">Help us shape the service</p>
+        <h2>Five questions, two minutes, 20% off your first ride.</h2>
+        <p class="lead">We are finalising the paperwork before launch, and your answers decide the timetable. Tell us what would actually work for your commute.</p>
+        <p class="note">Fares and times above are preliminary and may change before launch.</p>
+      </div>
+
+      <form class="form" data-form="feedback" novalidate>
+        <label class="field">
+          <span>1. Would this service be useful for your commute?</span>
+          <select name="useful">
+            <option>Every weekday</option>
+            <option>A few days a week</option>
+            <option>Occasionally</option>
+            <option>Not for me</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>2. Are the departure and arrival times convenient?</span>
+          <select name="times">
+            <option>Yes, the times work</option>
+            <option>Close, but I would shift them</option>
+            <option>No, I need a different time</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>3. What other time or route would interest you?</span>
+          <input type="text" name="route" placeholder="e.g. Niagara Falls at 07:30, or Hamilton">
+        </label>
+        <label class="field">
+          <span>4. Would you use a return trip Burlington or Hamilton → St. Catharines / Niagara Falls?</span>
+          <select name="return">
+            <option>Yes, every day</option>
+            <option>Sometimes</option>
+            <option>No</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>5. Anything you would add or change?</span>
+          <textarea name="comment" rows="3" placeholder="Your questions, wishes, deal-breakers"></textarea>
+        </label>
+        <label class="field">
+          <span>Email — for your 20% coupon</span>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <button class="btn" type="submit">Send feedback</button>
+        <p class="status" data-status></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="section" id="faq">
+    <div class="wrap faq">
+      <div class="faq__head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Questions before the first ride.</h2>
+        <p class="lead">Anything else — write to us below, we answer the same day.</p>
+      </div>
+      <div class="faq__list">
+        <details>
+          <summary>When can I book, and when does booking close?</summary>
+          <p>Bookings open three days ahead and close 12 hours before departure — that is 18:45 the evening before an 06:45 run.</p>
+        </details>
+        <details>
+          <summary>When is my card charged?</summary>
+          <p>We authorise the fare at booking to hold your seat, and charge it after the ride. If more passengers join and the fare drops, we charge the lower amount.</p>
+        </details>
+        <details>
+          <summary>Why do other passengers pay a different fare?</summary>
+          <p>The fare depends on how many people travel. Everyone's price is locked at their own booking, so it can never rise afterwards — only fall.</p>
+        </details>
+        <details>
+          <summary>What if I miss the 08:12 train?</summary>
+          <p>We aim to reach Burlington GO by 08:05. If traffic delays the van and you miss the 08:12 connection, the next train leaves at 08:43.</p>
+        </details>
+        <details>
+          <summary>Who drives, and is the ride insured?</summary>
+          <p>Niagara Falls Taxi, a local company operating for almost 50 years. Vehicles carry up to 7 seats and $5M business liability insurance. Wheelchair-accessible minivans are available.</p>
+        </details>
+        <details>
+          <summary>Can I bring a suitcase and a laptop bag?</summary>
+          <p>Yes, within the luggage limits: up to 4 large or 8 small bags in the van. Add a note at booking if you carry more.</p>
+        </details>
+        <details>
+          <summary>Do you run at weekends?</summary>
+          <p>Weekday mornings are the regular service. Weekend and holiday trips are available on request.</p>
+        </details>
+        <details>
+          <summary>Is there a discount for regular commuters?</summary>
+          <p>Yes — commuter discounts start from 5 rides a month. Leave your email in the feedback form and we will send the terms plus a 20% coupon for your first ride.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--deep" id="contact">
+    <div class="wrap contact">
+      <div class="contact__copy">
+        <p class="eyebrow">Contact</p>
+        <h2>Email us.</h2>
+        <p class="lead">Leave your address and a line about your trip — we answer from a real inbox, same day.</p>
+        <p class="contact__direct">Or write directly: <a href="mailto:hello@example.com">hello@example.com</a></p>
+      </div>
+
+      <form class="form form--onDark" data-form="contact" novalidate>
+        <label class="field">
+          <span>Name</span>
+          <input type="text" name="name" placeholder="Your name" required>
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label class="field">
+          <span>Message</span>
+          <textarea name="message" rows="4" placeholder="Which route and time would suit you?" required></textarea>
+        </label>
+        <button class="btn" type="submit">Email us</button>
+        <p class="status" data-status></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <div class="brand brand--foot"><span class="brand__mark" aria-hidden="true"></span><span>Morning Line</span></div>
+    <p>Weekday morning shuttle: Niagara Falls — St. Catharines — Burlington GO.</p>
+    <p class="foot__small">© 2026 Morning Line. Vehicles and drivers are supplied by Niagara Falls Taxi. Arrival times are estimates and cannot be guaranteed.</p>
+  </div>
+</footer>
+
+<div class="mobilebar">
+  <div class="mobilebar__price"><span>From</span><b id="mobileFare">$34.90</b><span>a seat</span></div>
+  <a class="btn" href="#book">Reserve a seat</a>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
