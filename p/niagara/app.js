@@ -1,7 +1,7 @@
 const CONFIG = {
   seatsInVan: 7,
   bookedBase: 4,
-  endpoint: "",
+  endpoint: "https://formsubmit.co/ajax/uppercanadaexpress@gmail.com",
   bands: [
     { min: 7, fare: 34.9 },
     { min: 5, fare: 39.9 },
