@@ -1,9 +1,9 @@
 const CONFIG = {
   seatsInVan: 7,
   bookedBase: 4,
-  endpoint: "https://formsubmit.co/ajax/uppercanadaexpress@gmail.com",
   email: "uppercanadaexpress@gmail.com",
-  timeoutMs: 8000,
+  formAction: "https://formsubmit.co/uppercanadaexpress@gmail.com",
+  subject: "SaveOnCab — website enquiry",
   bands: [
     { min: 7, fare: 34.9 },
     { min: 5, fare: 39.9 },
@@ -90,56 +90,58 @@ function setStatus(form, text, ok) {
   el.classList.add(ok ? "status--ok" : "status--err");
 }
 
-function mailtoLink(payload) {
-  const lines = Object.entries(payload)
-    .filter(([key]) => key !== "type")
-    .map(([key, value]) => key + ": " + value)
-    .join("\n");
-  return "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Website enquiry") + "&body=" + encodeURIComponent(lines);
+function ensureFrame() {
+  let frame = $("sendFrame");
+  if (!frame) {
+    frame = document.createElement("iframe");
+    frame.id = "sendFrame";
+    frame.name = "sendFrame";
+    frame.style.display = "none";
+    frame.setAttribute("aria-hidden", "true");
+    document.body.appendChild(frame);
+  }
+  return frame;
 }
 
-function setFallback(form, payload) {
-  const el = form.querySelector("[data-status]");
-  if (!el) return;
-  el.textContent = "Could not send right now. ";
-  const link = document.createElement("a");
-  link.href = mailtoLink(payload);
-  link.textContent = "Email us instead";
-  el.append(link);
-  el.append(" — your details are already in the message.");
-  el.classList.remove("status--ok");
-  el.classList.add("status--err");
+function postPayload(payload) {
+  ensureFrame();
+  const form = document.createElement("form");
+  form.action = CONFIG.formAction;
+  form.method = "POST";
+  form.target = "sendFrame";
+  form.style.display = "none";
+
+  const data = Object.assign({}, payload, {
+    _subject: CONFIG.subject,
+    _captcha: "false",
+    _template: "table"
+  });
+
+  Object.entries(data).forEach(([name, value]) => {
+    const input = document.createElement("input");
+    input.type = "hidden";
+    input.name = name;
+    input.value = value;
+    form.appendChild(input);
+  });
+
+  document.body.appendChild(form);
+  form.submit();
+  setTimeout(() => form.remove(), 5000);
 }
 
-async function submitForm(form, payload) {
-  if (!CONFIG.endpoint) {
+function submitForm(form, payload) {
+  if (!CONFIG.formAction) {
     setStatus(form, "Demo mode: the form is not connected to an inbox yet.", false);
     return;
   }
-  const button = form.querySelector('button[type="submit"]');
-  button.disabled = true;
-  const controller = new AbortController();
-  const timer = setTimeout(() => controller.abort(), CONFIG.timeoutMs);
-  try {
-    const res = await fetch(CONFIG.endpoint, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", Accept: "application/json" },
-      signal: controller.signal,
-      body: JSON.stringify(payload)
-    });
-    if (!res.ok) throw new Error("Request failed");
-    form.reset();
-    if (form.id === "book") {
-      fillDates();
-      render();
-    }
-    setStatus(form, "Thanks — we have it. Check your inbox for a confirmation.", true);
-  } catch (err) {
-    setFallback(form, payload);
-  } finally {
-    clearTimeout(timer);
-    button.disabled = false;
+  postPayload(payload);
+  form.reset();
+  if (form.id === "book") {
+    fillDates();
+    render();
   }
+  setStatus(form, "Thanks — your message is on its way. We will reply to your email.", true);
 }
 
 function wireBooking() {
