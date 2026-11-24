@@ -2,6 +2,8 @@ const CONFIG = {
   seatsInVan: 7,
   bookedBase: 4,
   endpoint: "https://formsubmit.co/ajax/uppercanadaexpress@gmail.com",
+  email: "uppercanadaexpress@gmail.com",
+  timeoutMs: 8000,
   bands: [
     { min: 7, fare: 34.9 },
     { min: 5, fare: 39.9 },
@@ -88,6 +90,27 @@ function setStatus(form, text, ok) {
   el.classList.add(ok ? "status--ok" : "status--err");
 }
 
+function mailtoLink(payload) {
+  const lines = Object.entries(payload)
+    .filter(([key]) => key !== "type")
+    .map(([key, value]) => key + ": " + value)
+    .join("\n");
+  return "mailto:" + CONFIG.email + "?subject=" + encodeURIComponent("Website enquiry") + "&body=" + encodeURIComponent(lines);
+}
+
+function setFallback(form, payload) {
+  const el = form.querySelector("[data-status]");
+  if (!el) return;
+  el.textContent = "Could not send right now. ";
+  const link = document.createElement("a");
+  link.href = mailtoLink(payload);
+  link.textContent = "Email us instead";
+  el.append(link);
+  el.append(" — your details are already in the message.");
+  el.classList.remove("status--ok");
+  el.classList.add("status--err");
+}
+
 async function submitForm(form, payload) {
   if (!CONFIG.endpoint) {
     setStatus(form, "Demo mode: the form is not connected to an inbox yet.", false);
@@ -95,10 +118,13 @@ async function submitForm(form, payload) {
   }
   const button = form.querySelector('button[type="submit"]');
   button.disabled = true;
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), CONFIG.timeoutMs);
   try {
     const res = await fetch(CONFIG.endpoint, {
       method: "POST",
       headers: { "Content-Type": "application/json", Accept: "application/json" },
+      signal: controller.signal,
       body: JSON.stringify(payload)
     });
     if (!res.ok) throw new Error("Request failed");
@@ -109,8 +135,9 @@ async function submitForm(form, payload) {
     }
     setStatus(form, "Thanks — we have it. Check your inbox for a confirmation.", true);
   } catch (err) {
-    setStatus(form, "Something went wrong. Please try again in a minute.", false);
+    setFallback(form, payload);
   } finally {
+    clearTimeout(timer);
     button.disabled = false;
   }
 }
