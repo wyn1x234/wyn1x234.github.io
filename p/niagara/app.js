@@ -25,6 +25,7 @@ const seatsEl = $("seats");
 const bookedEl = $("booked");
 const fareEl = $("fare");
 const hintEl = $("fareHint");
+const totalEl = $("totalHint");
 const labelEl = $("departureLabel");
 
 function money(value) {
@@ -62,6 +63,7 @@ function render() {
 
   bookedEl.textContent = shown;
   fareEl.textContent = money(fare);
+  totalEl.textContent = "Total for " + seats + (seats === 1 ? " seat: " : " seats: ") + money(fare * seats) + ".";
 
   const chosen = dateEl.options[dateEl.selectedIndex];
   const day = chosen ? chosen.textContent : "";
