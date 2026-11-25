@@ -1,6 +1,7 @@
 const CONFIG = {
   seatsInVan: 7,
-  bookedBase: 4,
+  bookedBase: 2,
+  groupShown: 3,
   email: "uppercanadaexpress@gmail.com",
   formAction: "https://formsubmit.co/uppercanadaexpress@gmail.com",
   subject: "SaveOnCab — website enquiry",
@@ -58,10 +59,11 @@ function render() {
   const pickup = PICKUPS[routeEl.value];
   const seats = Number(seatsEl.value) || 1;
   const total = CONFIG.bookedBase + seats;
-  const fare = fareFor(total);
+  const shown = Math.min(total, CONFIG.groupShown);
+  const fare = fareFor(CONFIG.groupShown);
 
-  bookedEl.textContent = total;
-  barEl.style.width = Math.min(100, (total / CONFIG.seatsInVan) * 100) + "%";
+  bookedEl.textContent = shown;
+  barEl.style.width = Math.min(100, (shown / CONFIG.groupShown) * 100) + "%";
   fareEl.textContent = money(fare);
   if (mobileFareEl) mobileFareEl.textContent = money(fare);
 
@@ -69,13 +71,10 @@ function render() {
   const day = chosen ? chosen.textContent : "";
   labelEl.textContent = day ? day + " · " + pickup.time : pickup.time;
 
-  if (total >= CONFIG.seatsInVan) {
-    hintEl.textContent = "The van is full. Your cap still holds — more cars are added as demand grows.";
-    hintEl.classList.add("hint--warn");
-  } else {
-    hintEl.textContent = "This is your cap. More passengers can only lower it.";
-    hintEl.classList.remove("hint--warn");
-  }
+  hintEl.textContent = total > CONFIG.groupShown
+    ? "More than three want in. At 18:45 we finalise the vans — everyone rides, and no one pays more than this."
+    : "At 18:45 we finalise the vans. If more people join, you pay less — never more.";
+  hintEl.classList.remove("hint--warn");
 }
 
 function validEmail(value) {
@@ -148,18 +147,30 @@ function wireBooking() {
   const form = $("book");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    const email = form.querySelector('[name="email"]');
+    const phone = form.querySelector('[name="phone"]');
+    if (!email.value.trim()) {
+      setStatus(form, "We need an email to confirm your seat.", false);
+      email.focus();
+      return;
+    }
+    if (!validEmail(email.value)) {
+      setStatus(form, "That email does not look right.", false);
+      email.focus();
+      return;
+    }
     const pickup = PICKUPS[routeEl.value];
     const seats = Number(seatsEl.value) || 1;
-    const total = CONFIG.bookedBase + seats;
     submitForm(form, {
       type: "booking",
       pickup: pickup.label,
       date: dateEl.value,
       time: pickup.time,
       seats: seats,
-      fare: fareFor(total),
-      cap: fareFor(total),
-      passengers: total
+      email: email.value.trim(),
+      phone: phone.value.trim(),
+      fare: fareFor(CONFIG.groupShown),
+      passengers: CONFIG.bookedBase + seats
     });
   });
 }

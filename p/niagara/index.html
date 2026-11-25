@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SaveOnCab — Niagara Falls to Burlington GO, every weekday morning</title>
 <meta name="description" content="A shared minivan shuttle from Niagara Falls and St. Catharines to Burlington GO, every weekday morning. $34.90–$49.90 per seat, booked online.">
-<link rel="stylesheet" href="styles.css?v=4">
+<link rel="stylesheet" href="styles.css?v=5">
 </head>
 <body>
 <a class="skip" href="#book">Skip to booking</a>
@@ -78,20 +78,31 @@
 
         <div class="fare">
           <div class="fare__row">
-            <span>Seats taken in the van</span>
-            <b><span id="booked">4</span> / 7</b>
+            <span>Booked in your group</span>
+            <b><span id="booked">3</span> / 3</b>
           </div>
           <div class="bar"><i id="bar"></i></div>
           <div class="fare__price">
-            <span>Fare now, per seat</span>
+            <span>Your fare, maximum</span>
             <b id="fare">$49.90</b>
           </div>
-          <p class="hint" id="fareHint">This is your cap. More passengers can only lower it.</p>
+          <p class="hint" id="fareHint">At 18:45 we finalise the vans. If more people join, you pay less — never more.</p>
         </div>
 
-        <button class="btn btn--full" type="submit">Reserve and authorise card</button>
+        <div class="field-row">
+          <label class="field">
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required>
+          </label>
+          <label class="field">
+            <span>Phone (optional)</span>
+            <input type="tel" name="phone" placeholder="If you prefer a text">
+          </label>
+        </div>
+
+        <button class="btn btn--full" type="submit">Reserve a seat</button>
         <p class="status" data-status></p>
-        <p class="fine">Booking closes 12 hours before departure, at 18:45 the evening before. Card is authorised now and charged after the ride.</p>
+        <p class="fine">No account needed. We confirm the van by email at 18:45 the evening before — check that inbox, or leave a phone number if a text suits you better.</p>
       </form>
     </div>
   </section>
@@ -117,13 +128,13 @@
         </li>
         <li>
           <span class="steps__n">02</span>
-          <h3>Book online</h3>
-          <p>Bookings open three days ahead and close 12 hours before departure. You see how many seats are already taken and what yours costs today.</p>
+          <h3>Book without an account</h3>
+          <p>An email is enough; a phone number is optional, if a text suits you better. Bookings open three days ahead and close at 18:45 the evening before.</p>
         </li>
         <li>
           <span class="steps__n">03</span>
-          <h3>Ride and split</h3>
-          <p>Everyone in the van pays the same share for that number of passengers. The fuller the van, the lower the fare — and your price never rises after booking.</p>
+          <h3>We form the vans</h3>
+          <p>At 18:45 we see how many people are riding and put together the vehicles, so nobody is left behind. Your fare is the one shown at booking, or lower.</p>
         </li>
       </ol>
     </div>
@@ -235,7 +246,8 @@
 
       <div class="terms">
         <h3>Fares and cancellations</h3>
-        <p>Your seat price is fixed at the moment of booking and can only fall. If fewer people travel than expected, you still pay no more than your cap — the difference is ours, never yours.</p>
+        <p>The fare you see at booking is your maximum. At 18:45 we finalise the groups and the vehicles, and your price can only go down from there — if more people travel, you pay less.</p>
+        <p>We put the groups together ourselves, so nobody is left at the kerb because a car filled up. It is not full transparency at every minute, and we say so: the alternative would be one or two people missing the ride.</p>
         <p>Cancellation is free up to 24 hours before departure. Between 24 and 12 hours we keep 80% of the fare, under 12 hours — the full fare. This is what keeps other passengers' prices from rising when someone drops out.</p>
         <p>A passenger who is not fit to travel can be removed from the run under the terms accepted at booking. The fare is not refunded in that case.</p>
       </div>
@@ -305,15 +317,23 @@
       <div class="faq__list">
         <details>
           <summary>When can I book, and when does booking close?</summary>
-          <p>Bookings open three days ahead and close 12 hours before departure — that is 18:45 the evening before an 06:45 run.</p>
+          <p>Bookings open three days ahead and close at 18:45 the evening before. That is also when we confirm your ride, the final number of passengers and your fare.</p>
+        </details>
+        <details>
+          <summary>Do I need an account?</summary>
+          <p>No. An email is enough — that is where the confirmation goes. A phone number is optional, if you would rather get a text. No passwords, no profile.</p>
+        </details>
+        <details>
+          <summary>Why do I only see three seats?</summary>
+          <p>Until booking closes we show a group of three, including you. At 18:45 we count everyone and put the vans together, so nobody is left behind — and your fare only goes down from the price you booked at.</p>
         </details>
         <details>
           <summary>When is my card charged?</summary>
-          <p>We authorise the fare at booking to hold your seat, and charge it after the ride. If more passengers join and the fare drops, we charge the lower amount.</p>
+          <p>We authorise the fare at booking to hold your seat, and charge it after the ride. If the group turns out bigger, we charge the lower amount.</p>
         </details>
         <details>
           <summary>Why do other passengers pay a different fare?</summary>
-          <p>The fare depends on how many people travel. Everyone's price is locked at their own booking, so it can never rise afterwards — only fall.</p>
+          <p>Because the fare depends on how many people travel. Everyone's price is capped at their own booking, so it can never rise afterwards — only fall.</p>
         </details>
         <details>
           <summary>What if I miss the 08:12 train?</summary>
@@ -381,6 +401,6 @@
   <a class="btn" href="#book">Reserve a seat</a>
 </div>
 
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
