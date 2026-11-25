@@ -7,8 +7,9 @@ const CONFIG = {
   subject: "SaveOnCab — website enquiry",
   bands: [
     { min: 7, fare: 34.9 },
-    { min: 5, fare: 39.9 },
-    { min: 3, fare: 49.9 }
+    { min: 6, fare: 39.9 },
+    { min: 4, fare: 49.9 },
+    { min: 3, fare: 59.9 }
   ]
 };
 
