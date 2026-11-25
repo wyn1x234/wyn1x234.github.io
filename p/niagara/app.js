@@ -23,11 +23,9 @@ const routeEl = $("route");
 const dateEl = $("date");
 const seatsEl = $("seats");
 const bookedEl = $("booked");
-const barEl = $("bar");
 const fareEl = $("fare");
 const hintEl = $("fareHint");
 const labelEl = $("departureLabel");
-const mobileFareEl = $("mobileFare");
 
 function money(value) {
   return "$" + value.toFixed(2);
@@ -63,9 +61,7 @@ function render() {
   const fare = fareFor(CONFIG.groupShown);
 
   bookedEl.textContent = shown;
-  barEl.style.width = Math.min(100, (shown / CONFIG.groupShown) * 100) + "%";
   fareEl.textContent = money(fare);
-  if (mobileFareEl) mobileFareEl.textContent = money(fare);
 
   const chosen = dateEl.options[dateEl.selectedIndex];
   const day = chosen ? chosen.textContent : "";

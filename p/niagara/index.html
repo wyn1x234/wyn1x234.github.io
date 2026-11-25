@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SaveOnCab — Niagara Falls to Burlington GO, every weekday morning</title>
 <meta name="description" content="A shared minivan shuttle from Niagara Falls and St. Catharines to Burlington GO, every weekday morning. $34.90–$49.90 per seat, booked online.">
-<link rel="stylesheet" href="styles.css?v=5">
+<link rel="stylesheet" href="styles.css?v=6">
 </head>
 <body>
 <a class="skip" href="#book">Skip to booking</a>
@@ -37,7 +37,7 @@
         <h1>A smarter way from Niagara to Toronto, every morning.</h1>
         <ul class="benefits">
           <li><b>$34.90 per seat when the van is full.</b> A taxi on your own is $120 or more.</li>
-          <li><b>The fuller the van, the lower your fare.</b> Book early and watch it drop.</li>
+          <li><b>The fuller the van, the lower your fare.</b> At 18:45 the group is set, and the price can only fall.</li>
           <li><b>One stop in St. Catharines.</b> Burlington GO by 08:05, the 08:12 train to Union.</li>
           <li><b>Niagara Falls Taxi vans and drivers.</b> Nearly 50 years on the road, $5M liability cover.</li>
         </ul>
@@ -78,15 +78,14 @@
 
         <div class="fare">
           <div class="fare__row">
-            <span>Booked in your group</span>
-            <b><span id="booked">3</span> / 3</b>
+            <span>Group shown, including you</span>
+            <b id="booked">3</b>
           </div>
-          <div class="bar"><i id="bar"></i></div>
           <div class="fare__price">
             <span>Your fare, maximum</span>
             <b id="fare">$49.90</b>
           </div>
-          <p class="hint" id="fareHint">At 18:45 we finalise the vans. If more people join, you pay less — never more.</p>
+          <p class="hint" id="fareHint">We show a group of three. At 18:45 we finalise the vans — if more people join, you pay less, never more.</p>
         </div>
 
         <div class="field-row">
@@ -397,10 +396,10 @@
 </footer>
 
 <div class="mobilebar">
-  <div class="mobilebar__price"><span>From</span><b id="mobileFare">$34.90</b><span>a seat</span></div>
+  <div class="mobilebar__price"><span>From</span><b>$34.90</b><span>a seat</span></div>
   <a class="btn" href="#book">Reserve a seat</a>
 </div>
 
-<script src="app.js?v=5"></script>
+<script src="app.js?v=6"></script>
 </body>
 </html>
