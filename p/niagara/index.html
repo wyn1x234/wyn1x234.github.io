@@ -5,10 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SaveOnCab — Niagara Falls to Burlington GO, every weekday morning</title>
 <meta name="description" content="A shared minivan shuttle from Niagara Falls and St. Catharines to Burlington GO, every weekday morning. $34.90–$59.90 per seat, booked online.">
-<link rel="stylesheet" href="styles.css?v=8">
+<link rel="stylesheet" href="styles.css?v=9">
 </head>
 <body>
 <a class="skip" href="#book">Skip to booking</a>
+
+<div class="promo">
+  <a class="wrap promo__in" href="#feedback">
+    <span class="promo__tag">20% off</span>
+    <span class="promo__text">Tell us about your commute — five questions, two minutes, 20% off your first ride.</span>
+    <span class="promo__go" aria-hidden="true">→</span>
+  </a>
+</div>
 
 <header class="top">
   <div class="wrap top__in">
@@ -109,32 +117,38 @@
 
   <section class="strip">
     <div class="wrap strip__in">
-      <div><b>3</b><span>stops on the route</span></div>
-      <div><b>1</b><span>run every weekday</span></div>
-      <div><b>7</b><span>seats per van</span></div>
-      <div><b>12 h</b><span>before departure bookings close</span></div>
+      <div><b>06:45</b><span>leaves Niagara Falls</span></div>
+      <div><b>Mon–Fri</b><span>running every weekday</span></div>
+      <div><b>Up to 7</b><span>seats per vehicle</span></div>
+      <div><b>08:05</b><span>latest arrival at Burlington GO</span></div>
     </div>
   </section>
 
   <section class="section" id="how">
     <div class="wrap">
       <p class="eyebrow">How it works</p>
-      <h2>Three steps, and the fare falls on its own.</h2>
-      <ol class="steps">
-        <li>
-          <span class="steps__n">01</span>
-          <h3>Pick your stop</h3>
-          <p>Niagara Falls downtown at 06:45, or Fairview Mall in St. Catharines at 07:05. One van, one route, no changes.</p>
+      <h2>One departure, every weekday at 06:45.</h2>
+      <p class="lead">There is only one morning run for now, and one pickup time in each city. No choices to guess, no timetable to decode.</p>
+      <ol class="flow">
+        <li class="flow__step">
+          <span class="flow__n">1</span>
+          <h3>Niagara Falls, 06:45</h3>
+          <p>We leave from downtown, near the train station. This is the only departure — there is no other time to pick.</p>
         </li>
-        <li>
-          <span class="steps__n">02</span>
-          <h3>Book without an account</h3>
-          <p>An email is enough; a phone number is optional, if a text suits you better. Bookings open three days ahead and close at 18:45 the evening before.</p>
+        <li class="flow__step">
+          <span class="flow__n">2</span>
+          <h3>St. Catharines, 07:05</h3>
+          <p>One stop on the way, at Fairview Mall near the YMCA Drive entrance. We pick up passengers and drive straight to Burlington GO.</p>
         </li>
-        <li>
-          <span class="steps__n">03</span>
-          <h3>We form the vans</h3>
-          <p>At 18:45 we see how many people are riding and put together the vehicles, so nobody is left behind. Your fare is the one shown at booking, or lower.</p>
+        <li class="flow__step">
+          <span class="flow__n">3</span>
+          <h3>Burlington GO, 07:55–08:05</h3>
+          <p>The van drops you at the station. The usual train to Union leaves at 08:12, the next one at 08:43.</p>
+        </li>
+        <li class="flow__step">
+          <span class="flow__n">4</span>
+          <h3>Book, and confirm at 18:45</h3>
+          <p>Booking opens three days ahead and closes at 18:45 the evening before. No account: an email is enough.</p>
         </li>
       </ol>
     </div>
@@ -143,17 +157,17 @@
   <section class="section section--deep" id="timetable">
     <div class="wrap">
       <p class="eyebrow">Timetable</p>
-      <h2>One van, three stops, every business day.</h2>
-      <p class="lead">We run Monday to Friday. Weekend and holiday trips are available on request.</p>
+      <h2>Where the van leaves and when it arrives.</h2>
+      <p class="lead">One morning run, Monday to Friday. Weekend and holiday trips are available on request.</p>
 
       <div class="table-wrap">
         <table class="tt">
           <thead>
             <tr>
-              <th>Stop</th>
               <th>Where</th>
+              <th>Meeting point</th>
               <th>Time</th>
-              <th>Note</th>
+              <th>What happens</th>
             </tr>
           </thead>
           <tbody>
@@ -161,31 +175,25 @@
               <td>Niagara Falls</td>
               <td>Downtown, near the train station</td>
               <td>06:45</td>
-              <td>Departure</td>
+              <td>The van leaves</td>
             </tr>
             <tr>
               <td>St. Catharines</td>
               <td>Fairview Mall, YMCA Drive entrance</td>
               <td>07:05</td>
-              <td>One stop</td>
+              <td>Passengers get in</td>
             </tr>
             <tr>
               <td>Burlington GO</td>
               <td>Station forecourt</td>
               <td>07:55–08:05</td>
-              <td>Arrival estimate</td>
-            </tr>
-            <tr>
-              <td>Union Station</td>
-              <td>GO train from Burlington</td>
-              <td>08:12</td>
-              <td>Next connection 08:43</td>
+              <td>We drop you at the station</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p class="note">Arrival times are estimates and cannot be guaranteed — traffic is outside our control. If a delay makes you miss the 08:12 train, the next connection leaves at 08:43.</p>
+      <p class="note">Arrival times are estimates and cannot be guaranteed — traffic is outside our control. From Burlington GO it is a short walk to the platform: the usual train to Union leaves at 08:12, the next one at 08:43. The train is not part of our fare — buy your GO ticket separately, and only if you are continuing to Toronto.</p>
     </div>
   </section>
 
@@ -219,6 +227,96 @@
           </ul>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="section" id="where">
+    <div class="wrap">
+      <p class="eyebrow">Route and fares</p>
+      <h2>Where we drive, and what a seat costs.</h2>
+      <p class="lead">The morning run is fixed, so there is nothing to guess. The calculator shows the fare for your group before you book.</p>
+
+      <figure class="mapcard">
+        <svg viewBox="0 0 1000 300" role="img" aria-label="Route map: Niagara Falls 06:45, St. Catharines 07:05, Burlington GO 07:55 to 08:05">
+          <path d="M0,0 H1000 V70 C880,86 760,120 640,136 C520,152 420,142 320,120 C220,98 110,58 0,20 Z" fill="#dfeaeb"/>
+          <path d="M1000,70 C880,86 760,120 640,136 C520,152 420,142 320,120 C220,98 110,58 0,20" fill="none" stroke="#c2d5d6" stroke-width="2"/>
+          <text x="505" y="72" text-anchor="middle" fill="#8ba8aa" font-size="15" font-style="italic" letter-spacing="2">LAKE ONTARIO</text>
+
+          <polyline points="165,145 640,205 895,185" fill="none" stroke="#c8452a" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+          <text x="400" y="196" fill="#8b8f96" font-size="12" letter-spacing="1.6">QEW</text>
+
+          <g fill="#c8452a" stroke="#ffffff" stroke-width="3">
+            <circle cx="165" cy="145" r="8"/>
+            <circle cx="640" cy="205" r="8"/>
+            <circle cx="895" cy="185" r="8"/>
+          </g>
+
+          <text x="165" y="192" text-anchor="middle" fill="#15181d" font-size="19" font-weight="600">Burlington GO</text>
+          <text x="165" y="214" text-anchor="middle" fill="#616a75" font-size="15" font-family="ui-monospace,Menlo,monospace">07:55–08:05</text>
+
+          <text x="640" y="252" text-anchor="middle" fill="#15181d" font-size="19" font-weight="600">St. Catharines</text>
+          <text x="640" y="274" text-anchor="middle" fill="#616a75" font-size="15" font-family="ui-monospace,Menlo,monospace">07:05</text>
+
+          <text x="895" y="232" text-anchor="middle" fill="#15181d" font-size="19" font-weight="600">Niagara Falls</text>
+          <text x="895" y="254" text-anchor="middle" fill="#616a75" font-size="15" font-family="ui-monospace,Menlo,monospace">06:45</text>
+        </svg>
+        <figcaption>Schematic, not to scale. The van follows the QEW along the lake shore.</figcaption>
+      </figure>
+
+      <div class="duo">
+        <div class="panel">
+          <h3>The morning run</h3>
+          <ol class="route">
+            <li>
+              <span class="route__place"><b>Niagara Falls</b><em>Downtown, near the train station</em></span>
+              <span class="route__time">06:45</span>
+            </li>
+            <li>
+              <span class="route__place"><b>St. Catharines</b><em>Fairview Mall, YMCA Drive entrance</em></span>
+              <span class="route__time">07:05</span>
+            </li>
+            <li>
+              <span class="route__place"><b>Burlington GO</b><em>Station forecourt</em></span>
+              <span class="route__time">07:55–08:05</span>
+            </li>
+          </ol>
+          <p class="note">The GO train to Union is not part of the fare. Buy the ticket separately, and only if you are going on to Toronto.</p>
+        </div>
+
+        <div class="panel">
+          <h3>What your group pays</h3>
+          <div class="calc">
+            <label class="field"><span>Where you get in</span>
+              <select id="calcPickup">
+                <option value="niagara">Niagara Falls — 06:45</option>
+                <option value="stcath">St. Catharines — 07:05</option>
+              </select>
+            </label>
+            <label class="field"><span>Seats you need</span>
+              <select id="calcSeats">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+              </select>
+            </label>
+          </div>
+          <p class="calc__out"><b id="calcFare">$59.90</b><span>per seat</span></p>
+          <p class="calc__total">Total <b id="calcTotal">$59.90</b> · departure <span id="calcTime">06:45</span></p>
+          <p class="note">The fare drops as the van fills. At 18:45 we see how full it is, and you never pay more than the figure above.</p>
+        </div>
+      </div>
+
+      <form class="req panel" data-form="route" novalidate>
+        <h3>Not on the route?</h3>
+        <p class="note">Tell us where you need to go. We add stops and open new runs when enough people ask for the same place.</p>
+        <div class="req__row">
+          <label class="field"><span>From</span><input name="from" type="text" placeholder="City or stop" required></label>
+          <label class="field"><span>To</span><input name="to" type="text" placeholder="City or stop" required></label>
+          <label class="field"><span>Email</span><input name="email" type="email" placeholder="you@example.com" required></label>
+          <button class="btn" type="submit">Request a route</button>
+        </div>
+        <p class="status" data-status role="status"></p>
+      </form>
     </div>
   </section>
 
@@ -366,7 +464,8 @@
         <p class="eyebrow">Contact</p>
         <h2>Email us.</h2>
         <p class="lead">Leave your address and a line about your trip — we answer from a real inbox, same day.</p>
-        <p class="contact__direct">Or write directly: <a href="mailto:uppercanadaexpress@gmail.com">uppercanadaexpress@gmail.com</a></p>
+        <p class="contact__direct">Or write directly: <a href="mailto:uppercanadaexpress@gmail.com">uppercanadaexpress@gmail.com</a><br>
+        By phone: <a href="tel:+14372278865">+1 437-227-8865</a></p>
       </div>
 
       <form class="form form--onDark" data-form="contact" novalidate>
@@ -393,7 +492,8 @@
   <div class="wrap foot__in">
     <div class="brand brand--foot"><span class="brand__mark" aria-hidden="true"></span><span>SaveOnCab</span></div>
     <p>Weekday morning shuttle: Niagara Falls — St. Catharines — Burlington GO.</p>
-    <p class="foot__small">© 2026 SaveOnCab. Vehicles and drivers are supplied by Niagara Falls Taxi. Arrival times are estimates and cannot be guaranteed.</p>
+    <p class="foot__small">Upper Canada Express · 4761 Crysler Avenue, Niagara Falls, ON L2E 3V9 · <a href="mailto:uppercanadaexpress@gmail.com">uppercanadaexpress@gmail.com</a> · <a href="tel:+14372278865">+1 437-227-8865</a></p>
+    <p class="foot__small"><a href="terms.html">Terms of Use</a> · © 2026 SaveOnCab. Vehicles and drivers are supplied by Niagara Falls Taxi. Arrival times are estimates and cannot be guaranteed.</p>
   </div>
 </footer>
 
@@ -402,6 +502,6 @@
   <a class="btn" href="#book">Reserve a seat</a>
 </div>
 
-<script src="app.js?v=8"></script>
+<script src="app.js?v=9"></script>
 </body>
 </html>

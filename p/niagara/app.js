@@ -174,6 +174,26 @@ function wireBooking() {
   });
 }
 
+function wireCalc() {
+  const pickup = $("calcPickup");
+  const seats = $("calcSeats");
+  const fareOut = $("calcFare");
+  const totalOut = $("calcTotal");
+  const timeOut = $("calcTime");
+  if (!pickup) return;
+
+  const update = () => {
+    const count = Number(seats.value) || 1;
+    const fare = fareFor(CONFIG.bookedBase + count);
+    fareOut.textContent = money(fare);
+    totalOut.textContent = money(fare * count);
+    timeOut.textContent = PICKUPS[pickup.value].time;
+  };
+
+  [pickup, seats].forEach((el) => el.addEventListener("change", update));
+  update();
+}
+
 function wireForms() {
   document.querySelectorAll("form[data-form]").forEach((form) => {
     form.addEventListener("submit", (event) => {
@@ -200,4 +220,5 @@ fillDates();
 [routeEl, dateEl, seatsEl].forEach((el) => el.addEventListener("change", render));
 wireBooking();
 wireForms();
+wireCalc();
 render();
