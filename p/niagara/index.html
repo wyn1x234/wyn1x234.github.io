@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>SaveOnCab — Niagara Falls to Burlington GO, every weekday morning</title>
-<meta name="description" content="A shared minivan shuttle from Niagara Falls and St. Catharines to Burlington GO, every weekday morning. $34.90–$59.90 per seat, booked online.">
-<link rel="stylesheet" href="styles.css?v=9">
+<meta name="description" content="A shared minivan shuttle from Niagara Falls and St. Catharines to Burlington GO, every weekday morning. Seats from $34.90, booked online.">
+<link rel="stylesheet" href="styles.css?v=10">
 </head>
 <body>
 <a class="skip" href="#book">Skip to booking</a>
@@ -13,7 +13,7 @@
 <div class="promo">
   <a class="wrap promo__in" href="#feedback">
     <span class="promo__tag">20% off</span>
-    <span class="promo__text">Tell us about your commute — five questions, two minutes, 20% off your first ride.</span>
+    <span class="promo__text">Five quick questions, a few minutes, 20% off your first ride.</span>
     <span class="promo__go" aria-hidden="true">→</span>
   </a>
 </div>
@@ -42,15 +42,16 @@
     <div class="wrap hero__grid">
       <div class="hero__copy">
         <p class="eyebrow">Mon–Fri · Niagara Falls → St. Catharines → Burlington GO</p>
-        <h1>A smarter way from Niagara to Toronto, every morning.</h1>
+        <h1>A smarter way from Niagara to anywhere.</h1>
+        <p class="hero__sub">Using a taxi cab by paying much less, only for your seat. We take care of your ride. You enjoy the journey.</p>
         <ul class="benefits">
-          <li><b>$34.90 per seat when the van is full.</b> A taxi on your own is $120 or more.</li>
-          <li><b>The fuller the van, the lower your fare.</b> At 18:45 the group is set, and the price can only fall.</li>
-          <li><b>One stop in St. Catharines.</b> Burlington GO by 08:05, the 08:12 train to Union.</li>
-          <li><b>Niagara Falls Taxi vans and drivers.</b> Nearly 50 years on the road, $5M liability cover.</li>
+          <li><b>Seats start at $34.90 when the van is full.</b> A private taxi would cost $120 or more.</li>
+          <li><b>The more passengers who book, the less everyone pays.</b> We finalise the groups at 6:45 PM, and your fare can only go down.</li>
+          <li><b>Just one stop in St. Catharines.</b> Arrive at Burlington GO by 8:05 AM, in time for the 8:12 AM train to Union Station.</li>
+          <li><b>Travel with Niagara Falls Taxi</b>, a trusted local company with nearly 50 years of experience and $5 million in liability coverage.</li>
         </ul>
         <div class="hero__cta">
-          <a class="btn" href="#book">Reserve a seat</a>
+          <a class="btn" href="#book">Reserve your seat today</a>
           <a class="btn btn--ghost" href="#timetable">See the timetable</a>
         </div>
       </div>
@@ -58,14 +59,16 @@
       <form class="card" id="book" novalidate>
         <div class="card__head">
           <h2>Reserve a seat</h2>
-          <p class="muted" id="departureLabel">06:45</p>
+          <p class="muted" id="departureLabel">6:45 AM</p>
         </div>
 
         <label class="field">
           <span>Pickup</span>
           <select id="route" name="route">
-            <option value="niagara">Niagara Falls — downtown, 06:45</option>
-            <option value="stcath">St. Catharines — Fairview Mall, 07:05</option>
+            <option value="burlington">Burlington GO — from Niagara Falls 6:45 AM, St. Catharines 7:05 AM</option>
+            <option value="welland">Niagara College, Welland — from Niagara Falls 7:30 AM</option>
+            <option value="brock">Brock University, Thorold — from Niagara Falls 7:30 AM</option>
+            <option value="stoney">Confederation GO, Stoney Creek — from Niagara Falls 7:30 AM</option>
           </select>
         </label>
 
@@ -86,15 +89,15 @@
 
         <div class="fare">
           <div class="fare__row">
-            <span>Group shown, including you</span>
+            <span>Current group size, including you</span>
             <b id="booked">3</b>
           </div>
           <div class="fare__price">
-            <span>Your fare, maximum</span>
+            <span>Your maximum fare</span>
             <b id="fare">$59.90</b>
           </div>
           <p class="hint" id="totalHint">Total for 1 seat: $59.90.</p>
-          <p class="hint" id="fareHint">We show a group of three. At 18:45 we finalise the vans — if more people join, you pay less, never more.</p>
+          <p class="hint" id="fareHint">Your booking shows an initial group of three. At 6:45 PM we finalise the passenger groups — if more people join, your fare goes down. It never goes up.</p>
         </div>
 
         <div class="field-row">
@@ -110,45 +113,45 @@
 
         <button class="btn btn--full" type="submit">Reserve a seat</button>
         <p class="status" data-status></p>
-        <p class="fine">No account needed. We confirm the van by email at 18:45 the evening before — check that inbox, or leave a phone number if a text suits you better.</p>
+        <p class="fine">No account required. We'll confirm your ride by email at 6:45 PM the evening before departure. Prefer a text? Leave your phone number when booking.</p>
       </form>
     </div>
   </section>
 
   <section class="strip">
     <div class="wrap strip__in">
-      <div><b>06:45</b><span>leaves Niagara Falls</span></div>
+      <div><b>6:45 AM</b><span>leaves Niagara Falls</span></div>
       <div><b>Mon–Fri</b><span>running every weekday</span></div>
       <div><b>Up to 7</b><span>seats per vehicle</span></div>
-      <div><b>08:05</b><span>latest arrival at Burlington GO</span></div>
+      <div><b>8:05 AM</b><span>latest arrival at Burlington GO</span></div>
     </div>
   </section>
 
   <section class="section" id="how">
     <div class="wrap">
       <p class="eyebrow">How it works</p>
-      <h2>One departure, every weekday at 06:45.</h2>
-      <p class="lead">There is only one morning run for now, and one pickup time in each city. No choices to guess, no timetable to decode.</p>
+      <h2>One departure, every weekday at 6:45 AM.</h2>
+      <p class="lead">There's one morning run for now, with one pickup time in each city — nothing to guess and no timetable to decode.</p>
       <ol class="flow">
         <li class="flow__step">
           <span class="flow__n">1</span>
-          <h3>Niagara Falls, 06:45</h3>
-          <p>We leave from downtown, near the train station. This is the only departure — there is no other time to pick.</p>
+          <h3>Niagara Falls, 6:45 AM</h3>
+          <p>Pick up in downtown Niagara Falls, near the train station. This is the only departure — there's no other time to choose.</p>
         </li>
         <li class="flow__step">
           <span class="flow__n">2</span>
-          <h3>St. Catharines, 07:05</h3>
-          <p>One stop on the way, at Fairview Mall near the YMCA Drive entrance. We pick up passengers and drive straight to Burlington GO.</p>
+          <h3>St. Catharines, 7:05 AM</h3>
+          <p>Just one stop on the way, at Fairview Mall by the YMCA Drive entrance. We pick up passengers and drive straight on to Burlington GO.</p>
         </li>
         <li class="flow__step">
           <span class="flow__n">3</span>
-          <h3>Burlington GO, 07:55–08:05</h3>
-          <p>The van drops you at the station. The usual train to Union leaves at 08:12, the next one at 08:43.</p>
+          <h3>Burlington GO, 7:55–8:05 AM</h3>
+          <p>The van drops you at the station. The 8:12 AM train to Union is the usual connection; the next one leaves at 8:43 AM.</p>
         </li>
         <li class="flow__step">
           <span class="flow__n">4</span>
-          <h3>Book, and confirm at 18:45</h3>
-          <p>Booking opens three days ahead and closes at 18:45 the evening before. No account: an email is enough.</p>
+          <h3>Book, and confirm at 6:45 PM</h3>
+          <p>Book up to three days in advance, with bookings closing at 6:45 PM the evening before departure. All you need is an email address.</p>
         </li>
       </ol>
     </div>
@@ -158,7 +161,7 @@
     <div class="wrap">
       <p class="eyebrow">Timetable</p>
       <h2>Where the van leaves and when it arrives.</h2>
-      <p class="lead">One morning run, Monday to Friday. Weekend and holiday trips are available on request.</p>
+      <p class="lead">Our regular service runs Monday to Friday. Weekend and holiday rides can also be arranged on request.</p>
 
       <div class="table-wrap">
         <table class="tt">
@@ -174,56 +177,58 @@
             <tr>
               <td>Niagara Falls</td>
               <td>Downtown, near the train station</td>
-              <td>06:45</td>
+              <td>6:45 AM</td>
               <td>The van leaves</td>
             </tr>
             <tr>
               <td>St. Catharines</td>
               <td>Fairview Mall, YMCA Drive entrance</td>
-              <td>07:05</td>
+              <td>7:05 AM</td>
               <td>Passengers get in</td>
             </tr>
             <tr>
               <td>Burlington GO</td>
               <td>Station forecourt</td>
-              <td>07:55–08:05</td>
-              <td>We drop you at the station</td>
+              <td>7:55–8:05 AM</td>
+              <td>Estimated arrival at the station</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <p class="note">Arrival times are estimates and cannot be guaranteed — traffic is outside our control. From Burlington GO it is a short walk to the platform: the usual train to Union leaves at 08:12, the next one at 08:43. The train is not part of our fare — buy your GO ticket separately, and only if you are continuing to Toronto.</p>
+      <p class="note">Arrival times are estimates and may vary depending on traffic conditions. The train isn't part of our service, but getting you to it is! We bring you to Burlington GO, where 40+ direct GO trains run to Toronto Union Station every weekday. The 8:12 AM is the usual connection; the next one departs at 8:43 AM.</p>
     </div>
   </section>
 
   <section class="section" id="fares">
     <div class="wrap">
       <p class="eyebrow">Fares</p>
-      <h2>One way, per seat, Niagara to Burlington GO.</h2>
-      <p class="lead">The price depends on how many people travel. You see the current fare before you book, and it can only go down.</p>
+      <h2>One-way fares per passenger, across Niagara.</h2>
+      <p class="lead">Four morning runs from Niagara Falls. Your fare depends on the number of passengers travelling — you'll see your maximum fare before booking, and it can only decrease.</p>
 
       <div class="fares">
+        <div class="price-wrap">
         <table class="price">
           <thead>
-            <tr><th>Passengers in the van</th><th>Fare per seat</th></tr>
+            <tr><th>Route</th><th>7 seats</th><th>6</th><th>5</th><th>4</th><th>3</th></tr>
           </thead>
           <tbody>
-            <tr><td>7</td><td>$34.90</td></tr>
-            <tr><td>6</td><td>$39.90</td></tr>
-            <tr><td>4–5</td><td>$49.90</td></tr>
-            <tr><td>3</td><td>$59.90</td></tr>
+            <tr><td>Burlington GO</td><td>34.90</td><td>39.90</td><td>49.90</td><td>49.90</td><td>59.90</td></tr>
+            <tr><td>Niagara College, Welland</td><td>9.50</td><td>11.00</td><td>13.00</td><td>16.00</td><td>22.00</td></tr>
+            <tr><td>Brock University, Thorold</td><td>8.00</td><td>10.00</td><td>11.00</td><td>12.50</td><td>17.00</td></tr>
+            <tr><td>Confederation GO, Stoney Creek</td><td>19.50</td><td>23.00</td><td>27.50</td><td>34.00</td><td>45.00</td></tr>
           </tbody>
         </table>
+        </div>
 
         <div class="fares__notes">
-          <h3>What is included</h3>
+          <h3>What's included</h3>
           <ul>
-            <li>Comfortable Niagara Falls Taxi vehicles with up to 7 seats, including wheelchair-accessible minivans.</li>
-            <li>Professional drivers of a local Niagara company operating for almost 50 years, with $5M business liability insurance.</li>
-            <li>Card authorised at booking and charged after the ride — no cash in the van.</li>
-            <li>Booking window: from 3 days ahead until 12 hours before departure (18:45 the evening before).</li>
-            <li>Regular commuter discounts, starting from 5 rides a month.</li>
+            <li>Comfortable vehicles operated by Niagara Falls Taxi, with seating for up to seven passengers. Wheelchair-accessible minivans are also available.</li>
+            <li>Professional drivers from a trusted Niagara-based company with nearly 50 years of experience and $5 million in commercial liability insurance.</li>
+            <li>Your card is authorised when you book and charged after your ride. No cash payments are required.</li>
+            <li>Book up to three days in advance, and no later than 6:45 PM the evening before departure (12 hours before your ride).</li>
+            <li>Special discounts for regular commuters, starting at five rides per month.</li>
           </ul>
         </div>
       </div>
@@ -232,55 +237,64 @@
 
   <section class="section" id="where">
     <div class="wrap">
-      <p class="eyebrow">Route and fares</p>
-      <h2>Where we drive, and what a seat costs.</h2>
-      <p class="lead">The morning run is fixed, so there is nothing to guess. The calculator shows the fare for your group before you book.</p>
+      <p class="eyebrow">Route</p>
+      <h2>Where we go, and what a seat costs.</h2>
+      <p class="lead">Four fixed morning runs from Niagara Falls. Pick a route in the calculator to see your group's fare before you book.</p>
 
+      <div class="visuals">
       <figure class="mapcard">
-        <svg viewBox="0 0 1000 300" role="img" aria-label="Route map: Niagara Falls 06:45, St. Catharines 07:05, Burlington GO 07:55 to 08:05">
-          <path d="M0,0 H1000 V70 C880,86 760,120 640,136 C520,152 420,142 320,120 C220,98 110,58 0,20 Z" fill="#dfeaeb"/>
-          <path d="M1000,70 C880,86 760,120 640,136 C520,152 420,142 320,120 C220,98 110,58 0,20" fill="none" stroke="#c2d5d6" stroke-width="2"/>
-          <text x="505" y="72" text-anchor="middle" fill="#8ba8aa" font-size="15" font-style="italic" letter-spacing="2">LAKE ONTARIO</text>
+          <svg viewBox="0 0 1000 300" role="img" aria-label="Route map: Niagara Falls 6:45 AM, St. Catharines 7:05 AM, Burlington GO 7:55 to 8:05 AM">
+            <path d="M0,0 H1000 V70 C880,86 760,120 640,136 C520,152 420,142 320,120 C220,98 110,58 0,20 Z" fill="#dfeaeb"/>
+            <path d="M1000,70 C880,86 760,120 640,136 C520,152 420,142 320,120 C220,98 110,58 0,20" fill="none" stroke="#c2d5d6" stroke-width="2"/>
+            <text x="505" y="72" text-anchor="middle" fill="#8ba8aa" font-size="15" font-style="italic" letter-spacing="2">LAKE ONTARIO</text>
 
-          <polyline points="165,145 640,205 895,185" fill="none" stroke="#c8452a" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
-          <text x="400" y="196" fill="#8b8f96" font-size="12" letter-spacing="1.6">QEW</text>
+            <polyline points="165,145 640,205 895,185" fill="none" stroke="#c8452a" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+            <text x="400" y="196" fill="#8b8f96" font-size="12" letter-spacing="1.6">QEW</text>
 
-          <g fill="#c8452a" stroke="#ffffff" stroke-width="3">
-            <circle cx="165" cy="145" r="8"/>
-            <circle cx="640" cy="205" r="8"/>
-            <circle cx="895" cy="185" r="8"/>
-          </g>
+            <g fill="#c8452a" stroke="#ffffff" stroke-width="3">
+              <circle cx="165" cy="145" r="8"/>
+              <circle cx="640" cy="205" r="8"/>
+              <circle cx="895" cy="185" r="8"/>
+            </g>
 
-          <text x="165" y="192" text-anchor="middle" fill="#15181d" font-size="19" font-weight="600">Burlington GO</text>
-          <text x="165" y="214" text-anchor="middle" fill="#616a75" font-size="15" font-family="ui-monospace,Menlo,monospace">07:55–08:05</text>
+            <text x="165" y="192" text-anchor="middle" fill="#15181d" font-size="19" font-weight="600">Burlington GO</text>
+            <text x="165" y="214" text-anchor="middle" fill="#616a75" font-size="15" font-family="ui-monospace,Menlo,monospace">7:55–8:05 AM</text>
 
-          <text x="640" y="252" text-anchor="middle" fill="#15181d" font-size="19" font-weight="600">St. Catharines</text>
-          <text x="640" y="274" text-anchor="middle" fill="#616a75" font-size="15" font-family="ui-monospace,Menlo,monospace">07:05</text>
+            <text x="640" y="252" text-anchor="middle" fill="#15181d" font-size="19" font-weight="600">St. Catharines</text>
+            <text x="640" y="274" text-anchor="middle" fill="#616a75" font-size="15" font-family="ui-monospace,Menlo,monospace">7:05 AM</text>
 
-          <text x="895" y="232" text-anchor="middle" fill="#15181d" font-size="19" font-weight="600">Niagara Falls</text>
-          <text x="895" y="254" text-anchor="middle" fill="#616a75" font-size="15" font-family="ui-monospace,Menlo,monospace">06:45</text>
-        </svg>
-        <figcaption>Schematic, not to scale. The van follows the QEW along the lake shore.</figcaption>
-      </figure>
+            <text x="895" y="232" text-anchor="middle" fill="#15181d" font-size="19" font-weight="600">Niagara Falls</text>
+            <text x="895" y="254" text-anchor="middle" fill="#616a75" font-size="15" font-family="ui-monospace,Menlo,monospace">6:45 AM</text>
+          </svg>
+          <figcaption>Example: the run to Burlington GO. Schematic, not to scale — the van follows the QEW along the lake shore.</figcaption>
+        </figure>
 
-      <div class="duo">
+        <figure class="van">
+          <img src="img/van.jpg" alt="Yellow Niagara Falls Taxi minivan with a roof sign" width="768" height="453">
+          <figcaption>Niagara Falls Taxi vans: up to seven seats, wheelchair-accessible minivans available.</figcaption>
+        </figure>
+      </div>ass="duo">
         <div class="panel">
           <h3>The morning run</h3>
           <ol class="route">
             <li>
-              <span class="route__place"><b>Niagara Falls</b><em>Downtown, near the train station</em></span>
-              <span class="route__time">06:45</span>
+              <span class="route__place"><b>Burlington GO</b><em>From Niagara Falls 6:45 AM · St. Catharines 7:05 AM</em></span>
+              <span class="route__time">arr. 7:55 AM</span>
             </li>
             <li>
-              <span class="route__place"><b>St. Catharines</b><em>Fairview Mall, YMCA Drive entrance</em></span>
-              <span class="route__time">07:05</span>
+              <span class="route__place"><b>Niagara College, Welland</b><em>From Niagara Falls</em></span>
+              <span class="route__time">7:30 AM</span>
             </li>
             <li>
-              <span class="route__place"><b>Burlington GO</b><em>Station forecourt</em></span>
-              <span class="route__time">07:55–08:05</span>
+              <span class="route__place"><b>Brock University, Thorold</b><em>From Niagara Falls</em></span>
+              <span class="route__time">7:30 AM</span>
+            </li>
+            <li>
+              <span class="route__place"><b>Confederation GO, Stoney Creek</b><em>From Niagara Falls</em></span>
+              <span class="route__time">7:30 AM</span>
             </li>
           </ol>
-          <p class="note">The GO train to Union is not part of the fare. Buy the ticket separately, and only if you are going on to Toronto.</p>
+          <p class="note">The train isn't part of our service, but getting you to it is! We bring you to Burlington GO, where 40+ direct GO trains run to Toronto Union Station every weekday.</p>
         </div>
 
         <div class="panel">
@@ -288,8 +302,10 @@
           <div class="calc">
             <label class="field"><span>Where you get in</span>
               <select id="calcPickup">
-                <option value="niagara">Niagara Falls — 06:45</option>
-                <option value="stcath">St. Catharines — 07:05</option>
+                <option value="burlington">Burlington GO — 6:45 AM</option>
+                <option value="welland">Niagara College, Welland — 7:30 AM</option>
+                <option value="brock">Brock University, Thorold — 7:30 AM</option>
+                <option value="stoney">Confederation GO, Stoney Creek — 7:30 AM</option>
               </select>
             </label>
             <label class="field"><span>Seats you need</span>
@@ -301,8 +317,8 @@
             </label>
           </div>
           <p class="calc__out"><b id="calcFare">$59.90</b><span>per seat</span></p>
-          <p class="calc__total">Total <b id="calcTotal">$59.90</b> · departure <span id="calcTime">06:45</span></p>
-          <p class="note">The fare drops as the van fills. At 18:45 we see how full it is, and you never pay more than the figure above.</p>
+          <p class="calc__total">Total <b id="calcTotal">$59.90</b> · departure <span id="calcTime">6:45 AM</span></p>
+          <p class="note">The more passengers who book, the less everyone pays. We finalise the groups at 6:45 PM, and you never pay more than the figure above.</p>
         </div>
       </div>
 
@@ -323,32 +339,32 @@
   <section class="section section--tint" id="rules">
     <div class="wrap">
       <p class="eyebrow">Before you book</p>
-      <h2>What fits in the van.</h2>
+      <h2>Before you travel.</h2>
       <div class="rules">
         <article class="rule">
           <h3>Luggage</h3>
-          <p>Up to 4 large or 8 small bags in the van. Tell us in the booking note if you carry more.</p>
+          <p>Each van can accommodate up to four large bags or eight small bags. If you need to bring additional luggage, please mention it in your booking notes.</p>
         </article>
         <article class="rule">
           <h3>Children</h3>
-          <p>From 10 years old, quiet, and no more than one child per adult. Younger children need a private car for now.</p>
+          <p>Children must be at least 10 years old and accompanied by an adult. A maximum of one child per adult is permitted. Children under 10 can't use this shared service for now and will need private transportation.</p>
         </article>
         <article class="rule">
           <h3>Pets</h3>
-          <p>In a carrier only. Without a carrier the driver can refuse the ride and the fare stays charged.</p>
+          <p>Pets are welcome only when transported in an appropriate carrier. If your pet isn't in a carrier, the driver may refuse transportation, and the fare will still be charged.</p>
         </article>
         <article class="rule">
           <h3>Accessibility</h3>
-          <p>Wheelchair-accessible minivans are part of the fleet. They take fewer regular seats, so book a day ahead when you can.</p>
+          <p>Wheelchair-accessible minivans are available. As these vehicles have reduced passenger capacity, we recommend booking at least one day in advance.</p>
         </article>
       </div>
 
       <div class="terms">
         <h3>Fares and cancellations</h3>
-        <p>The fare you see at booking is your maximum. At 18:45 we finalise the groups and the vehicles, and your price can only go down from there — if more people travel, you pay less.</p>
-        <p>We put the groups together ourselves, so nobody is left at the kerb because a car filled up. It is not full transparency at every minute, and we say so: the alternative would be one or two people missing the ride.</p>
-        <p>Cancellation is free up to 24 hours before departure. Between 24 and 12 hours we keep 80% of the fare, under 12 hours — the full fare. This is what keeps other passengers' prices from rising when someone drops out.</p>
-        <p>A passenger who is not fit to travel can be removed from the run under the terms accepted at booking. The fare is not refunded in that case.</p>
+        <p>The fare displayed when you book is the maximum amount you'll pay. At 6:45 PM we finalise the passenger groups and arrange the vehicles. If additional passengers join, your fare will be reduced accordingly. It will never increase.</p>
+        <p>We organise the passenger groups ourselves to make sure everyone with a confirmed booking has a seat. We don't display live passenger numbers throughout the day. Instead, we finalise the groups before departure so everyone can travel as planned.</p>
+        <p>You can cancel free of charge up to 24 hours before departure. Cancellations made between 12 and 24 hours before departure incur an 80% charge. Cancellations made less than 12 hours before departure are charged in full. This policy helps us keep fares predictable and affordable for the other passengers.</p>
+        <p>We reserve the right to refuse transportation to passengers who are not fit to travel, in accordance with the terms and conditions accepted at booking. In such cases, the fare is non-refundable.</p>
       </div>
     </div>
   </section>
@@ -356,15 +372,15 @@
   <section class="section" id="feedback">
     <div class="wrap request">
       <div class="request__copy">
-        <p class="eyebrow">Help us shape the service</p>
-        <h2>Five questions, two minutes, 20% off your first ride.</h2>
-        <p class="lead">We are finalising the paperwork before launch, and your answers decide the timetable. Tell us what would actually work for your commute.</p>
-        <p class="note">Fares and times above are preliminary and may change before launch.</p>
+        <p class="eyebrow">Help us improve the service</p>
+        <h2>Five quick questions. Two minutes of your time. Get 20% off your first ride!</h2>
+        <p class="lead">We're getting ready to launch, and your feedback will help us finalise the schedule. Let us know what would work best for your daily commute.</p>
+        <p class="note">Please note that the fares and schedules shown above are preliminary and may change before the service launches.</p>
       </div>
 
       <form class="form" data-form="feedback" novalidate>
         <label class="field">
-          <span>1. Would this service be useful for your commute?</span>
+          <span>1. Would you find this service useful for your commute?</span>
           <select name="useful">
             <option>Every weekday</option>
             <option>A few days a week</option>
@@ -373,7 +389,7 @@
           </select>
         </label>
         <label class="field">
-          <span>2. Are the departure and arrival times convenient?</span>
+          <span>2. Do the proposed departure and arrival times work for you?</span>
           <select name="times">
             <option>Yes, the times work</option>
             <option>Close, but I would shift them</option>
@@ -381,11 +397,11 @@
           </select>
         </label>
         <label class="field">
-          <span>3. What other time or route would interest you?</span>
-          <input type="text" name="route" placeholder="e.g. Niagara Falls at 07:30, or Hamilton">
+          <span>3. Are there any other departure times or routes you'd be interested in?</span>
+          <input type="text" name="route" placeholder="e.g. Niagara Falls at 7:30 AM, or Hamilton">
         </label>
         <label class="field">
-          <span>4. Would you use a return trip Burlington or Hamilton → St. Catharines / Niagara Falls?</span>
+          <span>4. Would you be interested in a return service from Burlington or Hamilton to St. Catharines or Niagara Falls?</span>
           <select name="return">
             <option>Yes, every day</option>
             <option>Sometimes</option>
@@ -393,14 +409,14 @@
           </select>
         </label>
         <label class="field">
-          <span>5. Anything you would add or change?</span>
+          <span>5. Is there anything else you'd like us to add or change?</span>
           <textarea name="comment" rows="3" placeholder="Your questions, wishes, deal-breakers"></textarea>
         </label>
         <label class="field">
-          <span>Email — for your 20% coupon</span>
+          <span>Your email address (to receive your 20% discount code)</span>
           <input type="email" name="email" placeholder="you@example.com" required>
         </label>
-        <button class="btn" type="submit">Send feedback</button>
+        <button class="btn" type="submit">Submit feedback</button>
         <p class="status" data-status></p>
       </form>
     </div>
@@ -410,49 +426,49 @@
     <div class="wrap faq">
       <div class="faq__head">
         <p class="eyebrow">FAQ</p>
-        <h2>Questions before the first ride.</h2>
-        <p class="lead">Anything else — write to us below, we answer the same day.</p>
+        <h2>Frequently asked questions</h2>
+        <p class="lead">Have another question? Send us a message below, and we'll get back to you the same day.</p>
       </div>
       <div class="faq__list">
         <details>
-          <summary>When can I book, and when does booking close?</summary>
-          <p>Bookings open three days ahead and close at 18:45 the evening before. That is also when we confirm your ride, the final number of passengers and your fare.</p>
+          <summary>How far in advance can I book? When do bookings close?</summary>
+          <p>Bookings open three days ahead and close at 6:45 PM the evening before departure. At that time, we'll confirm your ride, final passenger numbers, and your fare.</p>
         </details>
         <details>
           <summary>Do I need an account?</summary>
-          <p>No. An email is enough — that is where the confirmation goes. A phone number is optional, if you would rather get a text. No passwords, no profile.</p>
+          <p>No. All you need is an email address — that's where the confirmation goes. A phone number is optional if you'd rather get a text. There's no need to create an account or remember another password.</p>
         </details>
         <details>
-          <summary>Why do I only see three seats?</summary>
-          <p>Until booking closes we show a group of three, including you. At 18:45 we count everyone and put the vans together, so nobody is left behind — and your fare only goes down from the price you booked at.</p>
+          <summary>Why does my booking initially show only three passengers?</summary>
+          <p>Before bookings close, we display an initial group of three passengers, including yourself. At 6:45 PM we finalise the groups and arrange the vans, and your final fare may be lower than the amount originally displayed — but it will never be higher.</p>
         </details>
         <details>
-          <summary>When is my card charged?</summary>
-          <p>We authorise the fare at booking to hold your seat, and charge it after the ride. If the group turns out bigger, we charge the lower amount.</p>
+          <summary>When will my card be charged?</summary>
+          <p>Your card is authorised when you book to secure your seat. The actual payment is processed after your ride. If additional passengers join your group, you'll be charged the lower fare.</p>
         </details>
         <details>
-          <summary>Why do other passengers pay a different fare?</summary>
-          <p>Because the fare depends on how many people travel. Everyone's price is capped at their own booking, so it can never rise afterwards — only fall.</p>
+          <summary>Why might passengers pay different fares?</summary>
+          <p>Each passenger has their own maximum fare, based on the price shown when they book. Their fare can only decrease, never increase.</p>
         </details>
         <details>
-          <summary>What if I miss the 08:12 train?</summary>
-          <p>We aim to reach Burlington GO by 08:05. If traffic delays the van and you miss the 08:12 connection, the next train leaves at 08:43.</p>
+          <summary>What if I miss the 8:12 AM train?</summary>
+          <p>Our target arrival time at Burlington GO is 8:05 AM. If traffic causes us to miss the 8:12 AM train, the next available train departs at 8:43 AM.</p>
         </details>
         <details>
-          <summary>Who drives, and is the ride insured?</summary>
-          <p>Niagara Falls Taxi, a local company operating for almost 50 years. Vehicles carry up to 7 seats and $5M business liability insurance. Wheelchair-accessible minivans are available.</p>
+          <summary>Who operates the service, and is the ride insured?</summary>
+          <p>Niagara Falls Taxi, a local company with nearly 50 years of experience. The vehicles accommodate up to seven passengers and are covered by $5 million in commercial liability insurance. Wheelchair-accessible minivans are available.</p>
         </details>
         <details>
           <summary>Can I bring a suitcase and a laptop bag?</summary>
-          <p>Yes, within the luggage limits: up to 4 large or 8 small bags in the van. Add a note at booking if you carry more.</p>
+          <p>Yes, within the luggage limits: up to four large or eight small bags per van. Please mention any additional luggage in your booking notes.</p>
         </details>
         <details>
-          <summary>Do you run at weekends?</summary>
-          <p>Weekday mornings are the regular service. Weekend and holiday trips are available on request.</p>
+          <summary>Is the service available on weekends?</summary>
+          <p>Our regular service operates on weekday mornings. Weekend and holiday rides can be arranged upon request.</p>
         </details>
         <details>
-          <summary>Is there a discount for regular commuters?</summary>
-          <p>Yes — commuter discounts start from 5 rides a month. Leave your email in the feedback form and we will send the terms plus a 20% coupon for your first ride.</p>
+          <summary>Do you offer discounts for regular commuters?</summary>
+          <p>Yes — commuter discounts start at five rides per month. Complete the feedback form with your email address, and we'll send you the commuter discount details along with a 20% discount code for your first ride.</p>
         </details>
       </div>
     </div>
@@ -462,9 +478,9 @@
     <div class="wrap contact">
       <div class="contact__copy">
         <p class="eyebrow">Contact</p>
-        <h2>Email us.</h2>
-        <p class="lead">Leave your address and a line about your trip — we answer from a real inbox, same day.</p>
-        <p class="contact__direct">Or write directly: <a href="mailto:uppercanadaexpress@gmail.com">uppercanadaexpress@gmail.com</a><br>
+        <h2>Get in touch</h2>
+        <p class="lead">Leave your email address and a short message about your trip. We'll get back to you the same day.</p>
+        <p class="contact__direct">Or email us directly at: <a href="mailto:uppercanadaexpress@gmail.com">uppercanadaexpress@gmail.com</a><br>
         By phone: <a href="tel:+14372278865">+1 437-227-8865</a></p>
       </div>
 
@@ -478,10 +494,10 @@
           <input type="email" name="email" placeholder="you@example.com" required>
         </label>
         <label class="field">
-          <span>Message</span>
+          <span>Your message</span>
           <textarea name="message" rows="4" placeholder="Which route and time would suit you?" required></textarea>
         </label>
-        <button class="btn" type="submit">Email us</button>
+        <button class="btn" type="submit">Send message</button>
         <p class="status" data-status></p>
       </form>
     </div>
@@ -491,17 +507,17 @@
 <footer class="foot">
   <div class="wrap foot__in">
     <div class="brand brand--foot"><span class="brand__mark" aria-hidden="true"></span><span>SaveOnCab</span></div>
-    <p>Weekday morning shuttle: Niagara Falls — St. Catharines — Burlington GO.</p>
+    <p>Weekday morning shuttle service connecting Niagara Falls, St. Catharines, and Burlington GO.</p>
     <p class="foot__small">Upper Canada Express · 4761 Crysler Avenue, Niagara Falls, ON L2E 3V9 · <a href="mailto:uppercanadaexpress@gmail.com">uppercanadaexpress@gmail.com</a> · <a href="tel:+14372278865">+1 437-227-8865</a></p>
     <p class="foot__small"><a href="terms.html">Terms of Use</a> · © 2026 SaveOnCab. Vehicles and drivers are supplied by Niagara Falls Taxi. Arrival times are estimates and cannot be guaranteed.</p>
   </div>
 </footer>
 
 <div class="mobilebar">
-  <div class="mobilebar__price"><span>From</span><b>$34.90</b><span>a seat</span></div>
+  <div class="mobilebar__price"><span>Seats from</span><b>$34.90</b></div>
   <a class="btn" href="#book">Reserve a seat</a>
 </div>
 
-<script src="app.js?v=9"></script>
+<script src="app.js?v=10"></script>
 </body>
 </html>

@@ -4,18 +4,34 @@ const CONFIG = {
   groupShown: 3,
   email: "uppercanadaexpress@gmail.com",
   formAction: "https://formsubmit.co/uppercanadaexpress@gmail.com",
-  subject: "SaveOnCab — website enquiry",
-  bands: [
-    { min: 7, fare: 34.9 },
-    { min: 6, fare: 39.9 },
-    { min: 4, fare: 49.9 },
-    { min: 3, fare: 59.9 }
-  ]
+  subject: "SaveOnCab — website enquiry"
 };
 
-const PICKUPS = {
-  niagara: { time: "06:45", label: "Niagara Falls — downtown" },
-  stcath: { time: "07:05", label: "St. Catharines — Fairview Mall" }
+const ROUTES = {
+  burlington: {
+    label: "Niagara Falls — Burlington GO",
+    departure: "6:45 AM",
+    pickup: "Niagara Falls 6:45 AM · St. Catharines 7:05 AM",
+    fares: { 7: 34.9, 6: 39.9, 5: 49.9, 4: 49.9, 3: 59.9 }
+  },
+  welland: {
+    label: "Niagara Falls — Niagara College, Welland",
+    departure: "7:30 AM",
+    pickup: "Niagara Falls 7:30 AM",
+    fares: { 7: 9.5, 6: 11, 5: 13, 4: 16, 3: 22 }
+  },
+  brock: {
+    label: "Niagara Falls — Brock University, Thorold",
+    departure: "7:30 AM",
+    pickup: "Niagara Falls 7:30 AM",
+    fares: { 7: 8, 6: 10, 5: 11, 4: 12.5, 3: 17 }
+  },
+  stoney: {
+    label: "Niagara Falls — Confederation GO, Stoney Creek",
+    departure: "7:30 AM",
+    pickup: "Niagara Falls 7:30 AM",
+    fares: { 7: 19.5, 6: 23, 5: 27.5, 4: 34, 3: 45 }
+  }
 };
 
 const $ = (id) => document.getElementById(id);
@@ -33,9 +49,10 @@ function money(value) {
   return "$" + value.toFixed(2);
 }
 
-function fareFor(total) {
-  const band = CONFIG.bands.find((b) => total >= b.min);
-  return band ? band.fare : CONFIG.bands[CONFIG.bands.length - 1].fare;
+function fareFor(total, routeKey) {
+  const fares = ROUTES[routeKey].fares;
+  const key = Math.min(CONFIG.seatsInVan, Math.max(3, total));
+  return fares[key];
 }
 
 function isoDate(d) {
@@ -56,11 +73,11 @@ function fillDates() {
 }
 
 function render() {
-  const pickup = PICKUPS[routeEl.value];
+  const route = ROUTES[routeEl.value];
   const seats = Number(seatsEl.value) || 1;
   const total = CONFIG.bookedBase + seats;
   const shown = Math.min(total, CONFIG.groupShown);
-  const fare = fareFor(CONFIG.groupShown);
+  const fare = fareFor(CONFIG.groupShown, routeEl.value);
 
   bookedEl.textContent = shown;
   fareEl.textContent = money(fare);
@@ -68,11 +85,11 @@ function render() {
 
   const chosen = dateEl.options[dateEl.selectedIndex];
   const day = chosen ? chosen.textContent : "";
-  labelEl.textContent = day ? day + " · " + pickup.time : pickup.time;
+  labelEl.textContent = day ? day + " · " + route.departure : route.departure;
 
   hintEl.textContent = total > CONFIG.groupShown
-    ? "More than three want in. At 18:45 we finalise the vans — everyone rides, and no one pays more than this."
-    : "At 18:45 we finalise the vans. If more people join, you pay less — never more.";
+    ? "More than three want in. At 6:45 PM we finalise the groups — everyone rides, and no one pays more than this."
+    : "At 6:45 PM we finalise the groups. If more people join, your fare goes down — it never goes up.";
   hintEl.classList.remove("hint--warn");
 }
 
@@ -158,17 +175,18 @@ function wireBooking() {
       email.focus();
       return;
     }
-    const pickup = PICKUPS[routeEl.value];
+    const route = ROUTES[routeEl.value];
     const seats = Number(seatsEl.value) || 1;
     submitForm(form, {
       type: "booking",
-      pickup: pickup.label,
+      route: route.label,
+      pickup: route.pickup,
       date: dateEl.value,
-      time: pickup.time,
+      time: route.departure,
       seats: seats,
       email: email.value.trim(),
       phone: phone.value.trim(),
-      fare: fareFor(CONFIG.groupShown),
+      fare: fareFor(CONFIG.groupShown, routeEl.value),
       passengers: CONFIG.bookedBase + seats
     });
   });
@@ -184,10 +202,10 @@ function wireCalc() {
 
   const update = () => {
     const count = Number(seats.value) || 1;
-    const fare = fareFor(CONFIG.bookedBase + count);
+    const fare = fareFor(CONFIG.bookedBase + count, pickup.value);
     fareOut.textContent = money(fare);
     totalOut.textContent = money(fare * count);
-    timeOut.textContent = PICKUPS[pickup.value].time;
+    timeOut.textContent = ROUTES[pickup.value].departure;
   };
 
   [pickup, seats].forEach((el) => el.addEventListener("change", update));
